@@ -128,3 +128,30 @@ BEGIN
   END LOOP;
 END;
 
+-- ---------------------------------------------
+-- 	REF CURSOR
+-- ---------------------------------------------
+DECLARE
+  TYPE genType IS REF CURSOR; --weak ref cursor
+  genCursor genType;
+  emp_rec employees%ROWTYPE;
+  dep_rec departments%ROWTYPE;
+BEGIN
+  OPEN genCursor FOR SELECT * FROM employees;
+  LOOP
+  FETCH genCursor INTO emp_rec;
+  EXIT WHEN genCursor%NOTFOUND;
+    dbms_output.put_line(emp_rec.last_name);
+  END LOOP;
+  CLOSE genCursor;
+  
+  OPEN genCursor FOR SELECT * FROM departments;
+  LOOP
+  FETCH genCursor INTO dep_rec;
+  EXIT WHEN genCursor%NOTFOUND;
+    dbms_output.put_line(dep_rec.department_name);
+  END LOOP;
+  CLOSE genCursor;
+END;
+/
+  

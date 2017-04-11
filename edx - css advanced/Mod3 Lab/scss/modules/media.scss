@@ -1,0 +1,17 @@
+/***************************
+Media Modules
+***************************/
+.media, .media-body {
+  overflow:hidden;
+}
+.media-item {
+  float:left;
+  margin-right: 10px;
+}
+.media-item i {
+  color: #594a42;
+  font-size: 5em;
+}
+.media-item img {
+  display:block;
+}

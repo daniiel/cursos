@@ -1,0 +1,115 @@
+/*
+Color List:
+- light blue = 00AEEF;
+- dark blue = 1C75BC
+- green = 8DC63F
+- dark green = 009444
+- orange = F7941E
+- dark orange = F15A29
+- brown = 594a42;
+*/
+
+/***************************
+****************************
+Reset
+****************************
+***************************/
+@import 'normalize.css';
+
+/* Change all elements to use border-box */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/***************************
+****************************
+Base Styles
+****************************
+***************************/
+
+
+/***************************
+****************************
+Layout Styles
+****************************
+***************************/
+/* Content Container*/
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1170px;
+}
+/* Row */
+.row {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+/* Row Clear Float*/
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* Media Query excludes extra small devices and includes small and above */
+[class*='col-'] {
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+@media (min-width: 48em) {
+  [class*='col-'] {
+    float: left;
+  }
+  /* Column Two Thirds */
+  .col-2-3 {
+    width: 66.6666%;
+  }
+  /* Column Third */
+  .col-1-3 {
+    width: 33.3333%;
+  }
+}
+
+@media (min-width: 48em) {
+  .pull-right-sm {
+    float:right;
+  }
+}
+
+@media only screen and (max-width : 47.9375em) {
+  .remove-gutter-xs {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+
+/***************************
+****************************
+Modules
+****************************
+***************************/
+
+
+/***************************
+****************************
+Theme Styles
+****************************
+***************************/
+.background-primary {
+  background: #F7941E;
+}
+.background-secondary {
+  background: #00AEEF;
+}
+.background-tertiary {
+  background: #8DC63F;
+}
+.background-quaternary {
+  background: #594a42;
+}

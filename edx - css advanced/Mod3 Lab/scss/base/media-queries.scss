@@ -1,0 +1,14 @@
+$mq-1: 48em !default;/*768px / 16px = 48em */
+
+/*cuando se remueve 0.0625 se remueve un pixel para que la siguiente media-query no se sobrelape*/
+@mixin extra-small-only {
+    @media only screen and (max-width : $mq-1 - 0.0625) {
+        @content;
+    }
+}
+
+@mixin small-and-above {
+    @media only screen and (min-width: $mq-1) {
+        @content;
+    }
+}

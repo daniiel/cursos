@@ -1,0 +1,18 @@
+.frame {
+    overflow: hidden;
+    /*This code will hide the edges of any image larger than the .frame.*/
+}
+.frame-primary {
+    @include circle(200px);
+    margin: 25px auto 40px auto;
+
+    img {
+        width: 100%;
+    }
+    @include small-and-above {
+        @include circle(355px);
+        position: relative;
+        top: -30px;
+        margin: 0 auto 63px auto;
+    }
+}
