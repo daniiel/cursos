@@ -1,0 +1,75 @@
+<html>
+    <head>
+        <title>tabs - scrollspy</title>
+        <link rel='stylesheet' href='css/bootstrap.min.css'/>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>Tabs</h3>
+                    <!-- Tabs -->
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li class="active"><a href="#Home" role="tab" data-toggle="tab">Home</a></li>
+                        <li><a href="#Profile" role="tab" data-toggle="tab">Profile</a></li>
+                        <li><a href="#Messages" role="tab" data-toggle="tab">Messages</a></li>
+                    </ul>
+
+                    <!-- Tab content -->
+                    <div class="tab-content">
+                        <div class="active tab-pane fade in" id="Home">
+                            <h2>Home</h2>
+                            <p>Some sample content.
+                            class 'fade' -> animacion, 
+                            'in' -> restriccion q tiene la animacion para el panel selecionado por defecto
+                            </p>
+                        </div>
+                        <div class="tab-pane fade" id="Profile">
+                            <h2>Profile</h2>
+                            Some sample content.
+                        </div>
+                        <div class="tab-pane fade" id="Messages">
+                            <h2>Messages</h2>
+                            Some sample content.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h3>Scrollspy</h3>
+                    <div style="position:relative;">
+                        <nav class="navbar navbar-default navbar-static" role="navigation" id="navbar-spy">
+                            <div class="collapse navbar-collapse">
+                                <ul class="nav navbar-nav">
+                                    <li class="active"><a href="#scroll-first">First</a></li>
+                                    <li><a href="#scroll-second">Second</a></li>
+                                    <li><a href="#scroll-third">Third</a></li>
+                                </ul>
+                            </div>
+                        </nav>
+
+                        <div data-target="#navbar-spy" data-spy="scroll" 
+                            style="height:150px;overflow-y:scroll;position:relative;">
+                            <div id="scroll-first">
+                                <h2>First</h2>
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                            </div>
+                            <div id="scroll-second">
+                                <h2>Second</h2>
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                            </div>
+                            <div id="scroll-third">
+                                <h2>Third</h2>
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      
+        
+        
+        <script src="./js/jquery-3.2.0.min.js"></script><!--importante cerrar script en un tag aparte-->
+        <script src="./js/bootstrap.min.js"></script>
+    </body>
+</html>

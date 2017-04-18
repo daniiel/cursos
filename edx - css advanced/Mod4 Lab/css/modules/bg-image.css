@@ -1,0 +1,19 @@
+/***************************
+Bg-Image Modules
+***************************/
+/* line 4, ../../scss/modules/bg-image.scss */
+.bg-image {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+/* line 9, ../../scss/modules/bg-image.scss */
+.bg-image > img {
+  position: absolute;
+  top: -9999px;
+  bottom: -9999px;
+  left: -9999px;
+  right: -9999px;
+  margin: auto;
+}

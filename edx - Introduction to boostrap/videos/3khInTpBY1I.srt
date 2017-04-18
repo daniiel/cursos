@@ -1,0 +1,948 @@
+0
+00:00:02,640 --> 00:00:04,240
+All right, now before we go anywhere
+
+1
+00:00:04,240 --> 00:00:07,460
+I just want to point out the little logo that&#39;s
+
+2
+00:00:07,460 --> 00:00:08,490
+sitting behind me.
+
+3
+00:00:08,490 --> 00:00:10,180
+And I also want to mention the fact
+
+4
+00:00:10,180 --> 00:00:14,390
+that real recently at Ignite, which sort of dates when this
+
+5
+00:00:14,390 --> 00:00:17,780
+was recorded, Ignite being the big annual Microsoft
+
+6
+00:00:17,780 --> 00:00:20,760
+conference, there&#39;s actually a whole set of pins that had,
+
+7
+00:00:20,760 --> 00:00:22,684
+Microsoft hearts Linux, on it.
+
+8
+00:00:22,684 --> 00:00:24,100
+And I&#39;ve actually written a couple
+
+9
+00:00:24,100 --> 00:00:27,710
+a blog posts about Microsoft and Open Source.
+
+10
+00:00:27,710 --> 00:00:30,030
+So you may be wondering, OK, well,
+
+11
+00:00:30,030 --> 00:00:31,610
+what is Christopher about to do here?
+
+12
+00:00:31,610 --> 00:00:36,650
+Well Christopher is about to do a demo on Visual Studio
+
+13
+00:00:36,650 --> 00:00:41,760
+Code, which is an IDE created by us, created by Microsoft,
+
+14
+00:00:41,760 --> 00:00:45,050
+that will work on Windows, will work on Mac OS,
+
+15
+00:00:45,050 --> 00:00:47,170
+and will work on Linux.
+
+16
+00:00:47,170 --> 00:00:50,500
+And I&#39;m actually going to be doing this demo using a Linux
+
+17
+00:00:50,500 --> 00:00:53,590
+VM that is running on Azure.
+
+18
+00:00:53,590 --> 00:00:55,460
+And by the way, as a real quick side note,
+
+19
+00:00:55,460 --> 00:00:58,110
+I promise to not refer to myself in the third person
+
+20
+00:00:58,110 --> 00:01:00,300
+for the rest of this video.
+
+21
+00:01:00,300 --> 00:01:03,340
+Now, what I want to do is walk through how
+
+22
+00:01:03,340 --> 00:01:06,430
+to go get Bootstrap and the files
+
+23
+00:01:06,430 --> 00:01:09,440
+that are going to be required and how to get started
+
+24
+00:01:09,440 --> 00:01:11,420
+with Visual Studio code.
+
+25
+00:01:11,420 --> 00:01:14,170
+I do want to mention just as a real quick caveat,
+
+26
+00:01:14,170 --> 00:01:16,450
+you are going to notice that the demos that I&#39;m
+
+27
+00:01:16,450 --> 00:01:19,600
+going to be doing where I&#39;ll actually get in and start
+
+28
+00:01:19,600 --> 00:01:24,210
+using Bootstrap, are going to be in the full copy of Visual
+
+29
+00:01:24,210 --> 00:01:25,000
+Studio.
+
+30
+00:01:25,000 --> 00:01:26,830
+And again, if you are using Windows,
+
+31
+00:01:26,830 --> 00:01:30,350
+you can use Visual Studio Community for free.
+
+32
+00:01:30,350 --> 00:01:32,330
+But if you&#39;re not using Windows, or if you just
+
+33
+00:01:32,330 --> 00:01:35,200
+want to play with another IDE, integrated development
+
+34
+00:01:35,200 --> 00:01:37,090
+environment, you&#39;re free to do that.
+
+35
+00:01:37,090 --> 00:01:40,850
+And Visual Studio code is freely available for you.
+
+36
+00:01:40,850 --> 00:01:44,759
+Now, let&#39;s go ahead and take look at my environment here.
+
+37
+00:01:44,759 --> 00:01:46,300
+And I just want to highlight the fact
+
+38
+00:01:46,300 --> 00:01:48,050
+that I&#39;ve got two little folders that I&#39;ve
+
+39
+00:01:48,050 --> 00:01:49,100
+created on my desktop.
+
+40
+00:01:49,100 --> 00:01:53,450
+I&#39;ve got Bootstrap demo and then I&#39;ve got Visual Studio Code.
+
+41
+00:01:53,450 --> 00:01:56,960
+And then you&#39;ll also notice that I&#39;ve got my copy of Firefox
+
+42
+00:01:56,960 --> 00:01:57,630
+here.
+
+43
+00:01:57,630 --> 00:02:00,644
+Now I&#39;ve already got the three tabs open that I need.
+
+44
+00:02:00,644 --> 00:02:02,060
+And so what I&#39;m going to do is I&#39;m
+
+45
+00:02:02,060 --> 00:02:04,350
+going to go grab the Bootstrap files that I want,
+
+46
+00:02:04,350 --> 00:02:07,820
+I&#39;m going to go grab the jQuery file,
+
+47
+00:02:07,820 --> 00:02:09,750
+and then I&#39;m going to close all that off
+
+48
+00:02:09,750 --> 00:02:13,010
+by grabbing Visual Studio Code, and seeing how we can
+
+49
+00:02:13,010 --> 00:02:14,710
+get everything up and running.
+
+50
+00:02:14,710 --> 00:02:16,580
+So step one here is I&#39;m just going to click
+
+51
+00:02:16,580 --> 00:02:18,942
+on Download Bootstrap here.
+
+52
+00:02:18,942 --> 00:02:20,400
+And then right here, I&#39;m just going
+
+53
+00:02:20,400 --> 00:02:22,669
+to click on Download Bootstrap.
+
+54
+00:02:22,669 --> 00:02:24,710
+So I&#39;m just going to go ahead and open up the zip
+
+55
+00:02:24,710 --> 00:02:27,310
+file with the Archive Manager.
+
+56
+00:02:27,310 --> 00:02:30,030
+And then what you&#39;re going to notice inside
+
+57
+00:02:30,030 --> 00:02:34,270
+of that little Bootstrap 3.3.4 distribution
+
+58
+00:02:34,270 --> 00:02:38,870
+is a CSS folder which will have our CSS files.
+
+59
+00:02:38,870 --> 00:02:41,320
+We&#39;re going to have a Fonts folder which will have
+
+60
+00:02:41,320 --> 00:02:44,140
+our glyph icons and our fonts.
+
+61
+00:02:44,140 --> 00:02:46,940
+And then last, but not least is a JS folder that
+
+62
+00:02:46,940 --> 00:02:49,840
+will have our JavaScript files.
+
+63
+00:02:49,840 --> 00:02:52,930
+Now what I&#39;m going to do is, I&#39;m going to put those
+
+64
+00:02:52,930 --> 00:02:56,050
+into our Bootstrap demo folder.
+
+65
+00:02:56,050 --> 00:03:00,255
+So I&#39;m just going to do a real quick drag and drop of those.
+
+66
+00:03:03,310 --> 00:03:03,890
+There we go.
+
+67
+00:03:03,890 --> 00:03:06,140
+And I&#39;m going to do a little bit of cleanup work here.
+
+68
+00:03:06,140 --> 00:03:07,810
+That I really don&#39;t like the name,
+
+69
+00:03:07,810 --> 00:03:11,940
+CSS, so I&#39;m just going to rename that to be Styles.
+
+70
+00:03:11,940 --> 00:03:14,090
+And I really don&#39;t like the name JS.
+
+71
+00:03:14,090 --> 00:03:17,160
+I&#39;m going to rename that to be, Scripts.
+
+72
+00:03:17,160 --> 00:03:19,830
+So now you&#39;re going to notice inside of my Bootstrap demo
+
+73
+00:03:19,830 --> 00:03:22,870
+folder that I&#39;ve got Fonts, I&#39;ve got Scripts
+
+74
+00:03:22,870 --> 00:03:25,280
+and I&#39;ve got Styles.
+
+75
+00:03:25,280 --> 00:03:27,940
+So now I&#39;ve got the Bootstrap files that I&#39;m going to need,
+
+76
+00:03:27,940 --> 00:03:32,190
+but I also need jQuery in order for all
+
+77
+00:03:32,190 --> 00:03:34,260
+the Bootstrap functionality to work.
+
+78
+00:03:34,260 --> 00:03:38,310
+So I just navigate on over to jQuery.com,
+
+79
+00:03:38,310 --> 00:03:42,250
+I click, Download jQuery.
+
+80
+00:03:42,250 --> 00:03:47,510
+And then if I scroll on down here, I&#39;ve got my jQuery 2.x,
+
+81
+00:03:47,510 --> 00:03:49,470
+and that will actually work just fine.
+
+82
+00:03:49,470 --> 00:03:52,710
+I want the compressed production jQuery.
+
+83
+00:03:52,710 --> 00:03:54,180
+So I&#39;m just going to click that.
+
+84
+00:03:54,180 --> 00:03:56,530
+And what you&#39;ll notice is that it will then just
+
+85
+00:03:56,530 --> 00:03:59,610
+open it up inside of Firefox, so you can read jQuery
+
+86
+00:03:59,610 --> 00:04:01,520
+there if you like.
+
+87
+00:04:01,520 --> 00:04:04,310
+But an easier thing to do is, is just
+
+88
+00:04:04,310 --> 00:04:07,770
+to right-click on that link.
+
+89
+00:04:07,770 --> 00:04:14,120
+And then just click on Save Link As.
+
+90
+00:04:14,120 --> 00:04:17,130
+And then we&#39;ll go ahead and navigate back to our desktop.
+
+91
+00:04:17,130 --> 00:04:21,779
+We&#39;ll navigate on into Bootstrap demo, into Scripts,
+
+92
+00:04:21,779 --> 00:04:26,560
+and then we&#39;ll save it inside of there.
+
+93
+00:04:26,560 --> 00:04:27,800
+OK, cool.
+
+94
+00:04:27,800 --> 00:04:30,740
+Now last thing is to go grab Visual Studio Code.
+
+95
+00:04:30,740 --> 00:04:32,979
+So let&#39;s just go to Visual Studio Code.
+
+96
+00:04:32,979 --> 00:04:34,020
+I&#39;ve already got the tab.
+
+97
+00:04:34,020 --> 00:04:37,950
+You&#39;ll notice the URL there is Code.VisualStudio.com.
+
+98
+00:04:37,950 --> 00:04:40,060
+It&#39;s detecting the fact that running Linux,
+
+99
+00:04:40,060 --> 00:04:43,530
+so it automatically prompts me, hey download code for Linux.
+
+100
+00:04:43,530 --> 00:04:46,410
+So let me just click that.
+
+101
+00:04:46,410 --> 00:04:49,550
+And I&#39;ll just let it open up with the default to Archive
+
+102
+00:04:49,550 --> 00:04:51,370
+Manager again.
+
+103
+00:04:51,370 --> 00:04:54,400
+And now I&#39;m just going to extract all of this.
+
+104
+00:04:54,400 --> 00:04:56,950
+So let me just click, Extract.
+
+105
+00:04:56,950 --> 00:04:59,700
+And let&#39;s go back into the desktop, and then this time
+
+106
+00:04:59,700 --> 00:05:02,860
+into Visual Studio Code, and click, Extract.
+
+107
+00:05:02,860 --> 00:05:05,290
+So now what I&#39;ve done here is I&#39;ve
+
+108
+00:05:05,290 --> 00:05:08,330
+created the environment that we&#39;ll
+
+109
+00:05:08,330 --> 00:05:10,420
+be doing our Bootstrap work in.
+
+110
+00:05:10,420 --> 00:05:13,590
+And I&#39;ve now downloaded Visual Studio Code
+
+111
+00:05:13,590 --> 00:05:15,800
+and extracted that out to a folder.
+
+112
+00:05:15,800 --> 00:05:20,160
+OK, now if I click on Show The Files here,
+
+113
+00:05:20,160 --> 00:05:21,904
+what you&#39;re going to notice is that it&#39;s
+
+114
+00:05:21,904 --> 00:05:24,070
+got a whole set of files and so forth that it needs.
+
+115
+00:05:24,070 --> 00:05:27,555
+All I have to do is just double click on Code.
+
+116
+00:05:31,440 --> 00:05:35,290
+And that launch Visual Studio Code for me.
+
+117
+00:05:35,290 --> 00:05:36,920
+Beautiful.
+
+118
+00:05:36,920 --> 00:05:40,820
+OK, now you are going to notice that it automatically gives me
+
+119
+00:05:40,820 --> 00:05:45,190
+a little Welcome tab, going to show us how everything
+
+120
+00:05:45,190 --> 00:05:47,300
+is designed to work, and you can read
+
+121
+00:05:47,300 --> 00:05:49,570
+more if you want right there.
+
+122
+00:05:49,570 --> 00:05:51,320
+I&#39;m just going to close that out and I&#39;m
+
+123
+00:05:51,320 --> 00:05:54,040
+going to make one very big change here.
+
+124
+00:05:54,040 --> 00:05:57,000
+I&#39;m going to click on View, Theme,
+
+125
+00:05:57,000 --> 00:05:58,810
+and I&#39;m going to go to Light Theme, which
+
+126
+00:05:58,810 --> 00:06:02,250
+is going to make things much easier to read on the screen.
+
+127
+00:06:02,250 --> 00:06:07,500
+And I&#39;m also, by using Control and then the equal sign,
+
+128
+00:06:07,500 --> 00:06:10,180
+I&#39;m going to zoom in a little bit more,
+
+129
+00:06:10,180 --> 00:06:14,200
+just to make things that much easier to read.
+
+130
+00:06:14,200 --> 00:06:15,910
+Now what you&#39;re going to notice over here
+
+131
+00:06:15,910 --> 00:06:19,770
+is we&#39;ve got a set of little icons here.
+
+132
+00:06:19,770 --> 00:06:22,380
+So for example, you&#39;ll notice that I can connect up to Get.
+
+133
+00:06:22,380 --> 00:06:26,010
+The one I&#39;m going to want is Explore.
+
+134
+00:06:26,010 --> 00:06:28,090
+So I&#39;m just going to click, Explore,
+
+135
+00:06:28,090 --> 00:06:31,530
+and then I&#39;m going to click, Open Folder.
+
+136
+00:06:31,530 --> 00:06:36,240
+And that will then allow me to go open up that Bootstrap demo.
+
+137
+00:06:36,240 --> 00:06:38,030
+So I&#39;m just going to hit, Bootstrap demo.
+
+138
+00:06:38,030 --> 00:06:40,270
+I&#39;m going to click, OK.
+
+139
+00:06:40,270 --> 00:06:43,290
+So you&#39;ll notice by having opened up that Bootstrap
+
+140
+00:06:43,290 --> 00:06:46,000
+demo that of course I&#39;ve got everything inside of there.
+
+141
+00:06:46,000 --> 00:06:49,940
+That I&#39;ve got my Fonts, I&#39;ve got my Scripts,
+
+142
+00:06:49,940 --> 00:06:52,340
+and I&#39;ve got my Styles.
+
+143
+00:06:52,340 --> 00:06:53,770
+Now for right now, I&#39;m just going
+
+144
+00:06:53,770 --> 00:06:56,450
+to go ahead and collapse all of these.
+
+145
+00:06:56,450 --> 00:06:58,960
+And I&#39;m going to make sure that nothing is selected.
+
+146
+00:06:58,960 --> 00:07:02,270
+So I just clicked right in this little grayish area
+
+147
+00:07:02,270 --> 00:07:04,180
+on the lower left.
+
+148
+00:07:04,180 --> 00:07:07,690
+And you&#39;ll notice that when I highlight over Bootstrap demo
+
+149
+00:07:07,690 --> 00:07:10,470
+that I automatically get the ability to create
+
+150
+00:07:10,470 --> 00:07:11,560
+brand new file.
+
+151
+00:07:11,560 --> 00:07:13,650
+So I&#39;m just going to click, New File.
+
+152
+00:07:13,650 --> 00:07:15,370
+And I&#39;m going to call this index.html.
+
+153
+00:07:18,070 --> 00:07:19,820
+Hit Enter, and now of course you&#39;re
+
+154
+00:07:19,820 --> 00:07:22,460
+going to notice that it will give me an HTML editor.
+
+155
+00:07:22,460 --> 00:07:25,480
+So I could go in and add HTML.
+
+156
+00:07:25,480 --> 00:07:30,230
+I could go ahead and add head, and title,
+
+157
+00:07:30,230 --> 00:07:35,350
+Welcome to Visual Studio Code.
+
+158
+00:07:35,350 --> 00:07:40,180
+And then sneak down into the body here.
+
+159
+00:07:40,180 --> 00:07:44,130
+And now I&#39;ve got my very basic little HTML page.
+
+160
+00:07:44,130 --> 00:07:46,900
+Now in order to add the appropriate items
+
+161
+00:07:46,900 --> 00:07:51,390
+in for Bootstrap, I&#39;m going to need two Script files and one
+
+162
+00:07:51,390 --> 00:07:52,680
+Style file.
+
+163
+00:07:52,680 --> 00:07:55,740
+The two Script files that I&#39;m going to need is the minified
+
+164
+00:07:55,740 --> 00:08:01,960
+version of jQuery, so I can do that by saying, Script,
+
+165
+00:08:01,960 --> 00:08:05,790
+SRC equals, and then let&#39;s go ahead and point
+
+166
+00:08:05,790 --> 00:08:11,850
+at jQuery-2.1.4-- and that should of course be a dash
+
+167
+00:08:11,850 --> 00:08:14,190
+rather than a minus.
+
+168
+00:08:14,190 --> 00:08:17,020
+There we go-- .min.js.
+
+169
+00:08:17,020 --> 00:08:19,480
+And remember of course that the minified versions
+
+170
+00:08:19,480 --> 00:08:21,470
+are going to be the ones that will
+
+171
+00:08:21,470 --> 00:08:24,680
+be all compressed, no white space, things like that.
+
+172
+00:08:24,680 --> 00:08:28,320
+And then let&#39;s go ahead and add in another Script tag,
+
+173
+00:08:28,320 --> 00:08:31,970
+and then SRC equals, and then we&#39;ll say bootstrap.min.js.
+
+174
+00:08:35,580 --> 00:08:38,500
+And it is worth noting here that if you wanted
+
+175
+00:08:38,500 --> 00:08:41,932
+to reference a CDN, a content delivery network,
+
+176
+00:08:41,932 --> 00:08:43,140
+you could absolutely do that.
+
+177
+00:08:43,140 --> 00:08:46,200
+I&#39;m just going local here for those files.
+
+178
+00:08:46,200 --> 00:08:49,770
+So I&#39;ve got my couple little JavaScript files right there.
+
+179
+00:08:49,770 --> 00:08:52,450
+And then I also need a Style.
+
+180
+00:08:52,450 --> 00:08:56,710
+And the one that I&#39;m going to need is that bootstrap.min.css,
+
+181
+00:08:56,710 --> 00:09:05,278
+so I&#39;m just going to say, link, rel=&quot;stylesheet&quot;.
+
+182
+00:09:10,240 --> 00:09:16,702
+And then href= and then we&#39;ll go ahead and point at, in my case,
+
+183
+00:09:16,702 --> 00:09:17,785
+/styles/bootstrap.min.css.
+
+184
+00:09:25,530 --> 00:09:29,280
+And I&#39;m just noticing here I&#39;ve got a couple of little typos.
+
+185
+00:09:29,280 --> 00:09:33,790
+I do need to fix the spelling of Bootstrap.
+
+186
+00:09:33,790 --> 00:09:34,650
+We&#39;ll do that.
+
+187
+00:09:34,650 --> 00:09:37,710
+And I also need to specify that these are inside
+
+188
+00:09:37,710 --> 00:09:40,440
+of my Scripts folder.
+
+189
+00:09:40,440 --> 00:09:41,000
+There we go.
+
+190
+00:09:44,610 --> 00:09:47,630
+OK, and again, I&#39;m just going to keep having typos.
+
+191
+00:09:47,630 --> 00:09:48,370
+Beautiful.
+
+192
+00:09:48,370 --> 00:09:52,330
+So now, I&#39;ve got everything set up inside my basic HTML.
+
+193
+00:09:52,330 --> 00:09:55,270
+I always like a jumbotron to do a real quick check just
+
+194
+00:09:55,270 --> 00:09:57,010
+to make sure that everything&#39;s working.
+
+195
+00:09:57,010 --> 00:09:59,051
+So I&#39;m just going to say, div class=&#39;containter&#39;.
+
+196
+00:10:03,150 --> 00:10:04,920
+And then we&#39;ll say, div class=&#39;jumbotron&#39;.
+
+197
+00:10:11,860 --> 00:10:20,190
+And then let&#39;s throw in an h2 and &quot;Hello Visual Studio Code.&quot;
+
+198
+00:10:20,190 --> 00:10:21,500
+Just like that.
+
+199
+00:10:21,500 --> 00:10:22,320
+OK, cool.
+
+200
+00:10:22,320 --> 00:10:25,310
+So now I&#39;ve got everything set up just the way
+
+201
+00:10:25,310 --> 00:10:28,040
+that I want that.
+
+202
+00:10:28,040 --> 00:10:31,720
+So now let&#39;s go ahead and save it just Control-S will do that.
+
+203
+00:10:31,720 --> 00:10:35,530
+I&#39;m going to right-click and say, Open Containing Folder,
+
+204
+00:10:35,530 --> 00:10:37,640
+just to open up the folder that it&#39;s in.
+
+205
+00:10:37,640 --> 00:10:39,580
+Go a little bit old school there.
+
+206
+00:10:39,580 --> 00:10:42,940
+And then I&#39;ll just double-click on Index HTML, that
+
+207
+00:10:42,940 --> 00:10:47,280
+will open up inside of Mozilla Firefox for me
+
+208
+00:10:47,280 --> 00:10:49,730
+and display my little jumbotron with
+
+209
+00:10:49,730 --> 00:10:52,090
+that Hello, Visual Studio Code!
+
+210
+00:10:52,090 --> 00:10:54,450
+And just to kind of prove that it
+
+211
+00:10:54,450 --> 00:10:56,220
+is in fact using my Bootstrap, kinda
+
+212
+00:10:56,220 --> 00:10:58,750
+go one step further with this, let&#39;s even
+
+213
+00:10:58,750 --> 00:11:02,740
+just add in a real quick button.
+
+214
+00:11:02,740 --> 00:11:15,600
+And let&#39;s just say, class=btn, btn=success, and Hello button.
+
+215
+00:11:15,600 --> 00:11:17,270
+And let&#39;s again just hit, Save.
+
+216
+00:11:17,270 --> 00:11:20,460
+Let&#39;s go back to Firefox, hit, Refresh,
+
+217
+00:11:20,460 --> 00:11:22,700
+and then there&#39;s my little green button.
+
+218
+00:11:22,700 --> 00:11:26,080
+So here&#39;s the basic steps just one more time.
+
+219
+00:11:26,080 --> 00:11:30,720
+I created a little folder called, Bootstrap demo.
+
+220
+00:11:30,720 --> 00:11:34,660
+Created three folders inside of there, one for my Fonts
+
+221
+00:11:34,660 --> 00:11:36,670
+with the fonts from Bootstrap.
+
+222
+00:11:36,670 --> 00:11:41,010
+One with my Scripts with both jQuery and Bootstrap.
+
+223
+00:11:41,010 --> 00:11:43,740
+And then last but not least one with the Styles
+
+224
+00:11:43,740 --> 00:11:46,540
+that contains the appropriate CSS.
+
+225
+00:11:46,540 --> 00:11:48,590
+I grab Visual Studio Code.
+
+226
+00:11:48,590 --> 00:11:50,390
+Just threw that into a folder.
+
+227
+00:11:50,390 --> 00:11:53,590
+And I open that up, created my little index.
+
+228
+00:11:53,590 --> 00:11:55,960
+I referenced my Style Sheets.
+
+229
+00:11:55,960 --> 00:11:59,200
+I referenced my couple of little Scripts.
+
+230
+00:11:59,200 --> 00:12:02,450
+And then I went in and added my little bit of code.
+
+231
+00:12:02,450 --> 00:12:05,490
+And so you&#39;ll notice that you could use Visual Studio
+
+232
+00:12:05,490 --> 00:12:10,340
+Code to walk through all of the demos, and all of the labs
+
+233
+00:12:10,340 --> 00:12:12,430
+that are going to be associated with this course.
+
+234
+00:12:12,430 --> 00:12:13,930
+So if you don&#39;t want to use Windows,
+
+235
+00:12:13,930 --> 00:12:16,090
+if you want to use Mac, if you want to use Linux,
+
+236
+00:12:16,090 --> 00:12:19,700
+you could go ahead and use this as well.
+

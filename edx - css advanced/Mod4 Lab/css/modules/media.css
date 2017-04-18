@@ -1,0 +1,24 @@
+/***************************
+Media Modules
+***************************/
+/* line 4, ../../scss/modules/media.scss */
+.media, .media-body {
+  overflow: hidden;
+}
+
+/* line 7, ../../scss/modules/media.scss */
+.media-item {
+  float: left;
+  margin-right: 10px;
+}
+
+/* line 11, ../../scss/modules/media.scss */
+.media-item i {
+  color: #594a42;
+  font-size: 5em;
+}
+
+/* line 15, ../../scss/modules/media.scss */
+.media-item img {
+  display: block;
+}

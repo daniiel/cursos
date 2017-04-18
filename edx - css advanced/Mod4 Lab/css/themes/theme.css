@@ -1,0 +1,29 @@
+/***************************
+****************************
+Theme Styles
+****************************
+***************************/
+/* line 6, ../../scss/themes/theme.scss */
+.background-primary {
+  background: #F7941E;
+}
+
+/* line 9, ../../scss/themes/theme.scss */
+.background-secondary {
+  background: #C49A6C;
+}
+
+/* line 12, ../../scss/themes/theme.scss */
+.background-tertiary {
+  background: #8DC63F;
+}
+
+/* line 15, ../../scss/themes/theme.scss */
+.background-quaternary {
+  background: #594a42;
+}
+
+/* line 18, ../../scss/themes/theme.scss */
+.background-quinary {
+  background: #e7e1d7;
+}

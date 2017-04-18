@@ -1,0 +1,20 @@
+/***************************
+Header
+***************************/
+.header-primary {
+  background: #9B8579;
+  text-align: center;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  @include small-and-above {
+    background: none;
+    position: absolute;
+    z-index: 99;
+    width: 100%;
+    &:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  }
+}

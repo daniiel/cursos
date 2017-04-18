@@ -1,0 +1,17 @@
+SET UP THE ENVIRONMENT
+
+In Visual Studio Code, to configure a task runner that can be used to transpile your code, click View, click Command Palette, type Configure Task Runner and press Enter, and then click Other.
+
+Replace the contents of the tasks.json file with the following code:
+
+{
+    "version": "0.1.0",
+    "command": "node-Sass",
+    "isShellCommand": true,
+    "args": ["scss/styles.scss", "css/styles.css"]
+}
+
+
+-- Compilar
+
+In Visual Studio Code, to transpile your SCSS using node-Sass, press SHIFT + CTRL + B

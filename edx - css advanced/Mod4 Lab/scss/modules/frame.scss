@@ -1,0 +1,21 @@
+.frame {
+    overflow: hidden;
+}
+
+.frame-primary {
+    @include circle(200px);
+    margin: 25px auto 40px auto;
+    img {
+        width: 100%;
+    }
+    @include medium-and-above {
+        @include circle(230px);
+    }
+    
+    @include small-and-above {
+        @include circle(355px);
+        position: relative;
+        top: -30px;
+        margin: 0 auto;
+    }
+}

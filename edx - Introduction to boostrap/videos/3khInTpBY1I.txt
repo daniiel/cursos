@@ -1,0 +1,237 @@
+All right, now before we go anywhere
+I just want to point out the little logo that's
+sitting behind me.
+And I also want to mention the fact
+that real recently at Ignite, which sort of dates when this
+was recorded, Ignite being the big annual Microsoft
+conference, there's actually a whole set of pins that had,
+Microsoft hearts Linux, on it.
+And I've actually written a couple
+a blog posts about Microsoft and Open Source.
+So you may be wondering, OK, well,
+what is Christopher about to do here?
+Well Christopher is about to do a demo on Visual Studio
+Code, which is an IDE created by us, created by Microsoft,
+that will work on Windows, will work on Mac OS,
+and will work on Linux.
+And I'm actually going to be doing this demo using a Linux
+VM that is running on Azure.
+And by the way, as a real quick side note,
+I promise to not refer to myself in the third person
+for the rest of this video.
+Now, what I want to do is walk through how
+to go get Bootstrap and the files
+that are going to be required and how to get started
+with Visual Studio code.
+I do want to mention just as a real quick caveat,
+you are going to notice that the demos that I'm
+going to be doing where I'll actually get in and start
+using Bootstrap, are going to be in the full copy of Visual
+Studio.
+And again, if you are using Windows,
+you can use Visual Studio Community for free.
+But if you're not using Windows, or if you just
+want to play with another IDE, integrated development
+environment, you're free to do that.
+And Visual Studio code is freely available for you.
+Now, let's go ahead and take look at my environment here.
+And I just want to highlight the fact
+that I've got two little folders that I've
+created on my desktop.
+I've got Bootstrap demo and then I've got Visual Studio Code.
+And then you'll also notice that I've got my copy of Firefox
+here.
+Now I've already got the three tabs open that I need.
+And so what I'm going to do is I'm
+going to go grab the Bootstrap files that I want,
+I'm going to go grab the jQuery file,
+and then I'm going to close all that off
+by grabbing Visual Studio Code, and seeing how we can
+get everything up and running.
+So step one here is I'm just going to click
+on Download Bootstrap here.
+And then right here, I'm just going
+to click on Download Bootstrap.
+So I'm just going to go ahead and open up the zip
+file with the Archive Manager.
+And then what you're going to notice inside
+of that little Bootstrap 3.3.4 distribution
+is a CSS folder which will have our CSS files.
+We're going to have a Fonts folder which will have
+our glyph icons and our fonts.
+And then last, but not least is a JS folder that
+will have our JavaScript files.
+Now what I'm going to do is, I'm going to put those
+into our Bootstrap demo folder.
+So I'm just going to do a real quick drag and drop of those.
+There we go.
+And I'm going to do a little bit of cleanup work here.
+That I really don't like the name,
+CSS, so I'm just going to rename that to be Styles.
+And I really don't like the name JS.
+I'm going to rename that to be, Scripts.
+So now you're going to notice inside of my Bootstrap demo
+folder that I've got Fonts, I've got Scripts
+and I've got Styles.
+So now I've got the Bootstrap files that I'm going to need,
+but I also need jQuery in order for all
+the Bootstrap functionality to work.
+So I just navigate on over to jQuery.com,
+I click, Download jQuery.
+And then if I scroll on down here, I've got my jQuery 2.x,
+and that will actually work just fine.
+I want the compressed production jQuery.
+So I'm just going to click that.
+And what you'll notice is that it will then just
+open it up inside of Firefox, so you can read jQuery
+there if you like.
+But an easier thing to do is, is just
+to right-click on that link.
+And then just click on Save Link As.
+And then we'll go ahead and navigate back to our desktop.
+We'll navigate on into Bootstrap demo, into Scripts,
+and then we'll save it inside of there.
+OK, cool.
+Now last thing is to go grab Visual Studio Code.
+So let's just go to Visual Studio Code.
+I've already got the tab.
+You'll notice the URL there is Code.VisualStudio.com.
+It's detecting the fact that running Linux,
+so it automatically prompts me, hey download code for Linux.
+So let me just click that.
+And I'll just let it open up with the default to Archive
+Manager again.
+And now I'm just going to extract all of this.
+So let me just click, Extract.
+And let's go back into the desktop, and then this time
+into Visual Studio Code, and click, Extract.
+So now what I've done here is I've
+created the environment that we'll
+be doing our Bootstrap work in.
+And I've now downloaded Visual Studio Code
+and extracted that out to a folder.
+OK, now if I click on Show The Files here,
+what you're going to notice is that it's
+got a whole set of files and so forth that it needs.
+All I have to do is just double click on Code.
+And that launch Visual Studio Code for me.
+Beautiful.
+OK, now you are going to notice that it automatically gives me
+a little Welcome tab, going to show us how everything
+is designed to work, and you can read
+more if you want right there.
+I'm just going to close that out and I'm
+going to make one very big change here.
+I'm going to click on View, Theme,
+and I'm going to go to Light Theme, which
+is going to make things much easier to read on the screen.
+And I'm also, by using Control and then the equal sign,
+I'm going to zoom in a little bit more,
+just to make things that much easier to read.
+Now what you're going to notice over here
+is we've got a set of little icons here.
+So for example, you'll notice that I can connect up to Get.
+The one I'm going to want is Explore.
+So I'm just going to click, Explore,
+and then I'm going to click, Open Folder.
+And that will then allow me to go open up that Bootstrap demo.
+So I'm just going to hit, Bootstrap demo.
+I'm going to click, OK.
+So you'll notice by having opened up that Bootstrap
+demo that of course I've got everything inside of there.
+That I've got my Fonts, I've got my Scripts,
+and I've got my Styles.
+Now for right now, I'm just going
+to go ahead and collapse all of these.
+And I'm going to make sure that nothing is selected.
+So I just clicked right in this little grayish area
+on the lower left.
+And you'll notice that when I highlight over Bootstrap demo
+that I automatically get the ability to create
+brand new file.
+So I'm just going to click, New File.
+And I'm going to call this index.html.
+Hit Enter, and now of course you're
+going to notice that it will give me an HTML editor.
+So I could go in and add HTML.
+I could go ahead and add head, and title,
+Welcome to Visual Studio Code.
+And then sneak down into the body here.
+And now I've got my very basic little HTML page.
+Now in order to add the appropriate items
+in for Bootstrap, I'm going to need two Script files and one
+Style file.
+The two Script files that I'm going to need is the minified
+version of jQuery, so I can do that by saying, Script,
+SRC equals, and then let's go ahead and point
+at jQuery-2.1.4-- and that should of course be a dash
+rather than a minus.
+There we go-- .min.js.
+And remember of course that the minified versions
+are going to be the ones that will
+be all compressed, no white space, things like that.
+And then let's go ahead and add in another Script tag,
+and then SRC equals, and then we'll say bootstrap.min.js.
+And it is worth noting here that if you wanted
+to reference a CDN, a content delivery network,
+you could absolutely do that.
+I'm just going local here for those files.
+So I've got my couple little JavaScript files right there.
+And then I also need a Style.
+And the one that I'm going to need is that bootstrap.min.css,
+so I'm just going to say, link, rel="stylesheet".
+And then href= and then we'll go ahead and point at, in my case,
+/styles/bootstrap.min.css.
+And I'm just noticing here I've got a couple of little typos.
+I do need to fix the spelling of Bootstrap.
+We'll do that.
+And I also need to specify that these are inside
+of my Scripts folder.
+There we go.
+OK, and again, I'm just going to keep having typos.
+Beautiful.
+So now, I've got everything set up inside my basic HTML.
+I always like a jumbotron to do a real quick check just
+to make sure that everything's working.
+So I'm just going to say, div class='containter'.
+And then we'll say, div class='jumbotron'.
+And then let's throw in an h2 and "Hello Visual Studio Code."
+Just like that.
+OK, cool.
+So now I've got everything set up just the way
+that I want that.
+So now let's go ahead and save it just Control-S will do that.
+I'm going to right-click and say, Open Containing Folder,
+just to open up the folder that it's in.
+Go a little bit old school there.
+And then I'll just double-click on Index HTML, that
+will open up inside of Mozilla Firefox for me
+and display my little jumbotron with
+that Hello, Visual Studio Code!
+And just to kind of prove that it
+is in fact using my Bootstrap, kinda
+go one step further with this, let's even
+just add in a real quick button.
+And let's just say, class=btn, btn=success, and Hello button.
+And let's again just hit, Save.
+Let's go back to Firefox, hit, Refresh,
+and then there's my little green button.
+So here's the basic steps just one more time.
+I created a little folder called, Bootstrap demo.
+Created three folders inside of there, one for my Fonts
+with the fonts from Bootstrap.
+One with my Scripts with both jQuery and Bootstrap.
+And then last but not least one with the Styles
+that contains the appropriate CSS.
+I grab Visual Studio Code.
+Just threw that into a folder.
+And I open that up, created my little index.
+I referenced my Style Sheets.
+I referenced my couple of little Scripts.
+And then I went in and added my little bit of code.
+And so you'll notice that you could use Visual Studio
+Code to walk through all of the demos, and all of the labs
+that are going to be associated with this course.
+So if you don't want to use Windows,
+if you want to use Mac, if you want to use Linux,
+you could go ahead and use this as well.

@@ -1,0 +1,87 @@
+<html>
+    <head>
+        <title>forms</title>
+        <link rel='stylesheet' href='css/bootstrap.min.css'/>
+    </head>
+    <body>
+        
+        <div class="container">
+            <h2>Form vertical</h2><hr/>
+            
+            
+            <div class="alert alert-warning alert-dismissable">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                <strong>Title!</strong> Alert body ...
+            </div>
+            
+            <form role="form">
+                <div class="form-group">
+                    <label for="email" class="control-label">Email:</label>
+                    <input type="email" class="form-control" name="email" id="email" placeholder="email"/>
+                </div>
+            </form>
+
+            <h2>Form horizontal</h2><hr/>
+
+            <form role="form" class="form-horizontal">
+                <div class="form-group has-error has-feedback">
+                    <label for="email" class="control-label col-md-3">Email:</label>
+                    <div class="col-md-6">
+                        <!--un input no tiene la capacidad de dimensionarlo directamente usando columnas,
+                            para solucionarlo se encierra con un div -->
+                        <input type="email" class="form-control" name="email" id="email" placeholder="email"/>
+                        <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+                    </div>
+                </div>
+            </form>
+
+            <h2>Form in-group</h2><hr/>
+
+            <form role="form" class="form-horizontal">
+                <div class="form-group has-error has-feedback">
+                    <label for="twitter" class="control-label col-md-3">Twitter:</label>
+                    <div class="col-md-6">
+                        <div class="input-group">
+                            <span class="input-group-addon">@</span>
+                            <input type="text" class="form-control" name="twitter" id="twitter" placeholder="twitter"/>
+                        </div>
+                        <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="twitter" class="control-label col-md-3">Twitter:</label>
+                    <div class="col-md-6">
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <span class="glyphicon glyphicon-user"></span>
+                            </div>
+                            <input type="text" class="form-control" name="user" id="username" placeholder="username"/>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-3 btn-group" data-toggle="buttons">
+                        <label class="btn btn-primary active">
+                            <input type="radio" name="membership-level" id="gold" checked/>Gold
+                        </label>
+                        <label class="btn btn-primary">
+                            <input type="radio" name="membership-level" id="silver"/>Silver
+                        </label>
+                        <label class="btn btn-primary">
+                            <input type="radio" name="membership-level" id="bronze"/>Bronze
+                        </label>
+
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <button type="button" class="btn btn-success col-md-3 col-md-offset-3">Submit</button>
+                </div>
+            </form>
+        </div>
+        <script src="js/jquery-3.2.0.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+    </body>
+</html>
