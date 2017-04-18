@@ -128,3 +128,59 @@ BEGIN
   END LOOP;
 END;
 
+-- ---------------------------------------------
+--  COLLECTIONS - ASSOCIATIVE ARRAY
+-- ---------------------------------------------
+
+DECLARE
+  TYPE  empType IS TABLE OF employees.last_name%TYPE INDEX BY pls_integer;
+  empTable empType;
+  v_empId NUMBER := 100;
+BEGIN
+  SELECT last_name INTO empTable(v_empId) FROM employees
+  WHERE employee_id = v_empId;
+  dbms_output.put_line(empTable(v_empId));
+  
+  FOR i in 1..10 LOOP
+    SELECT last_name INTO empTable(v_empId) FROM employees
+    WHERE employee_id = v_empId;
+    v_empId := v_empId +1;
+  END LOOP;
+  
+  -- eliminar un elemento puntual
+  empTable.delete(103);
+  
+  FOR j in empTable.FIRST..empTable.LAST LOOP
+    IF empTable.EXISTS(j) THEN
+      dbms_output.put_line(empTable(j));
+    ELSE
+      NULL;
+    END IF;
+  END LOOP;
+END;
+/
+
+DECLARE
+  TYPE  empType IS TABLE OF employees%ROWTYPE INDEX BY pls_integer;
+  empTable empType;
+  v_empId NUMBER := 100;
+BEGIN
+
+  FOR i in 1..10 LOOP
+    SELECT * INTO empTable(v_empId) FROM employees
+    WHERE employee_id = v_empId;
+    v_empId := v_empId +1;
+  END LOOP;
+  
+  -- eliminar un elemento puntual
+  empTable.delete(103);
+  
+  FOR j in empTable.FIRST..empTable.LAST LOOP
+    IF empTable.EXISTS(j) THEN
+      dbms_output.put_line(empTable(j).last_name ||' '|| empTable(j).first_name);
+    ELSE
+      NULL;
+    END IF;
+  END LOOP;
+END;
+/
