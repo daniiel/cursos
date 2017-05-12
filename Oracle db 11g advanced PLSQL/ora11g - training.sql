@@ -129,7 +129,6 @@ BEGIN
 END;
 
 -- ---------------------------------------------
-<<<<<<< HEAD
 -- 	REF CURSOR
 -- ---------------------------------------------
 DECLARE
@@ -199,14 +198,12 @@ IS
 END cust_data2;
 /
 SHOW ERRORS
-  
-  --  -----------
       
-  SET autoprint ON
-  VARIABLE cv REFCURSOR; -- bind  /baind/ variable
-  EXECUTE cust_data2.get_cust(112, :cv);
-  
-=======
+SET autoprint ON
+VARIABLE cv REFCURSOR; -- bind  /baind/ variable
+EXECUTE cust_data2.get_cust(112, :cv);
+
+-- ---------------------------------------------
 --  COLLECTIONS - ASSOCIATIVE ARRAY
 -- ---------------------------------------------
 
@@ -262,4 +259,72 @@ BEGIN
   END LOOP;
 END;
 /
->>>>>>> origin/master
+
+-- ---------------------------------------------
+--  COLLECTIONS - NESTED TABLE (tablas anidadas)
+-- ---------------------------------------------
+
+CREATE TYPE phone_type AS OBJECT (label varchar2(25), phone varchar2(25));
+
+CREATE TYPE phone_nst AS TABLE OF  phone_type;
+
+CREATE TABLE employee_info (
+  employee_id number primary key,
+  first_name varchar2(25),
+  last_name varchar2(25),
+  phone_number phone_nst
+) NESTED TABLE phone_number store as phone_type_table;
+
+INSERT INTO employee_info VALUES (100, 'Steven','King',phone_nst(phone_type('home','5551212'), phone_type('office','5551213')));
+COMMIT;
+
+SELECT * FROM employee_info;
+
+SELECT ei.last_name, pn.* FROM employee_info ei, TABLE(ei.phone_number) pn;
+
+DECLARE
+  v_phone   phone_nst:=phone_nst(); -- inicializando usando el constructor
+                                    -- v_phone es inicializada con un colleccion vacia 
+BEGIN
+  v_phone.extend(3); -- 'extend' es un metodo, donde en la variable voy a color 3 numeros,
+                     -- los numeros v_phone(1) , (2), .. son como los indics de un array
+  v_phone(1) := phone_type('home','5551111');
+  v_phone(2) := phone_type('office','5551112');
+  v_phone(3) := phone_type('movil','5551113');
+  INSERT INTO employee_info VALUES (101,'Neena','Kochar',v_phone);
+END;
+/
+
+-- ---------------------------------------------
+--  COLLECTIONS - VARRAYS
+-- ---------------------------------------------
+
+CREATE TYPE phone_type AS OBJECT (label varchar2(25), phone varchar2(25));
+/
+CREATE OR REPLACE TYPE phone_varray AS VARRAY(2) of phone_type;
+/
+-- Varrays are quicker, more efficient
+-- because the data's actually stored inline
+CREATE TABLE employee_info_v (
+  employee_id NUMBER PRIMARY KEY,
+  first_name VARCHAR2(25),
+  last_name VARCHAR2(25),
+  phone_number phone_varray);
+  
+INSERT INTO employee_info_v VALUES(100,'Steven','king',phone_varray(phone_type('home','5551212'),phone_type('office','5551213')));
+
+SELECT * FROM employee_info_v;
+
+-- ver los numeros de telefonos 
+SELECT p2.last_name, p1.*
+FROM employee_info_v p2, TABLE(p2.phone_number) p1;
+
+-- En un Varray, no se pueden eliminar los elementos.
+
+
+
+
+
+
+
+
