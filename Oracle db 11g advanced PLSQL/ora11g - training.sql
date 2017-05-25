@@ -322,9 +322,21 @@ FROM employee_info_v p2, TABLE(p2.phone_number) p1;
 -- En un Varray, no se pueden eliminar los elementos.
 
 
+-- ---------------------------------------------
+--  CREAR DIRECTORIOS
+-- ---------------------------------------------
+
+-- Create the database directory object
+CREATE OR REPLACE DIRECTORY data_files AS 'C:\app\MEDIA_FILES';
+
+-- if needed, grant privs on the directory object
+GRANT READ ON DIRECTORY data_files TO OE;
 
 
+-- agregar columna BFILE a customer table
+ALTER TABLE customers ADD video BFILE;
 
-
-
+-- todos los ditectorios por mas que sean creados en minuscuals quedan almacenados en mayusculas
+UPDATE customers SET video = BFILENAME('DATA_FILES','GMCC - offer design.mp4')
+WHERE customer_id = 448;
 

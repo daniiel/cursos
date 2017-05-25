@@ -346,4 +346,14 @@ BEGIN
   CLOSE genCursor;
 END;
 /
-  
+
+--! LOB 
+-- Def: Large Object, usados para almacenar grandes, datos no estructurados tales como
+--    texto, imagenes, videos y archivos de sonido. Texto (CLOB), Foto (BLOB), Pelicula (BFILE).
+--    (apuntan a la localizacion fisica del sistema operativo)
+--    exiten dos tipos internal/external, internal significa que se 
+--    almacenan en la db y external fuera de esta, en el sistema operativo.
+--    Cuando se manipulan estos tipos de datos se usa normalmente el paquete de oracle
+--    DBMS_LOB
+
+-- Componentes: La columna LOB almacena un localizador a el valor del LOB.
