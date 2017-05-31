@@ -340,3 +340,117 @@ ALTER TABLE customers ADD video BFILE;
 UPDATE customers SET video = BFILENAME('DATA_FILES','GMCC - offer design.mp4')
 WHERE customer_id = 448;
 
+-- ---------------------------------------------
+--  CREAR LIBRERIAS
+-- ---------------------------------------------
+
+Create or replace library c_utility
+as 'C:\app\dbuitrag\product\11.2.0\dbhome_1\BIN\calc_tax.so';
+/
+
+GRANT EXECUTE ON c_utility TO oe;
+
+CREATE OR REPLACE FUNCTION tax_amt (x BINARY_INTEGER)
+RETURN BINARY_INTEGER
+AS LANGUAGE C
+LIBRARY sys.c_utility
+NAME "calc_tax";
+/
+
+BEGIN
+  DBMS_OUTPUT.PUT_LINE(tax_amt(100));
+END;
+/
+
+
+-- ---------------------------------------------
+--  CARGAR JAVA FILE A ORACLE
+-- ---------------------------------------------
+
+-- ir a la ruta donde esta la clase Java
+[cmd] cd C:\Users\dbuitrag\Desktop\github\cursos\Oracle db 11g advanced PLSQL
+
+-- cargar la clase a la db, con el usuario oe
+[cmd] loadjava -user oe/oe Factorial.java
+
+-- revisar nuestros objetos cargados
+SELECT object_name, object_type
+FROM user_objects
+WHERE object_type LIKE 'J%';
+
+SELECT text FROM user_source WHERE name = 'Factorial';
+
+-- crear funcion que referencia la funcion creada en Java
+CREATE OR REPLACE FUNCTION plstojavafac_fun (n NUMBER)
+RETURN NUMBER
+AS
+  LANGUAGE JAVA
+  NAME 'Factorial.calcFactorial (int) return int';
+/
+
+-- ejecucion de la funcion factorial cargada de una clase java
+EXECUTE DBMS_OUTPUT.PUT_LINE(plstojavafac_fun (6));
+
+-- ---------------------------------------------
+--  CREDIT CARD PACKAGE
+-- ---------------------------------------------
+
+CREATE TYPE TYP_CR_CARD AS OBJECT (card_type VARCHAR2(25), card_num NUMBER);
+/
+CREATE TYPE TYP_CR_CARD_NST AS TABLE OF TYP_CR_CARD;
+/
+
+ALTER TABLE customers ADD (credit_cards typ_cr_card_nst) 
+  NESTED TABLE credit_cards STORE AS c_c_store_tab;
+/
+CREATE OR REPLACE PACKAGE credit_card_pkg
+IS
+  PROCEDURE update_card_info (p_cust_id NUMBER, p_card_type VARCHAR2, p_card_no VARCHAR2);
+  PROCEDURE display_card_info(p_cust_id NUMBER);
+END credit_card_pkg;
+/
+
+CREATE OR REPLACE PACKAGE BODY credit_card_pkg
+IS
+  PROCEDURE update_card_info (p_cust_id NUMBER, p_card_type VARCHAR2, p_card_no VARCHAR2)
+  IS
+    v_card_info TYP_CR_CARD_NST;
+    i INTEGER;
+  BEGIN
+    SELECT credit_cards INTO v_card_info
+    FROM customers
+    WHERE customer_id = p_cust_id;
+    
+    IF v_card_info.EXISTS(1) THEN
+      i := v_card_info.LAST;
+      v_card_info.EXTEND(1);
+      v_card_info(i+1) := typ_cr_card(p_card_type, p_card_no);
+      
+      UPDATE customers SET credit_cards = v_card_info
+      WHERE customer_id = p_cust_id;
+    ELSE
+      UPDATE customers SET credit_cards = typ_cr_card_nst (typ_cr_card(p_card_type,p_card_no))
+      WHERE customer_id = p_cust_id;
+    END IF;
+  END update_card_info;
+  
+  PROCEDURE display_card_info(p_cust_id NUMBER)
+  IS
+    v_card_info TYP_CR_CARD_NST;
+    i INTEGER;
+  BEGIN
+    SELECT credit_cards INTO v_card_info
+    FROM customers
+    WHERE customer_id = p_cust_id;
+    
+    IF v_card_info.EXISTS(1) THEN
+      FOR idx IN v_card_info.FIRST..v_card_info.LAST LOOP
+        dbms_output.put('Card type: ' || v_card_info(idx).card_type || ' ');
+        dbms_output.put_line('/ Card No: ' || v_card_info(idx).card_num );
+      END LOOP;
+    ELSE
+      dbms_output.put_line('Customer has no credit cards');
+    END IF;
+  END display_card_info;
+END;
+/

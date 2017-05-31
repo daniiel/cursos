@@ -355,5 +355,28 @@ END;
 --    almacenan en la db y external fuera de esta, en el sistema operativo.
 --    Cuando se manipulan estos tipos de datos se usa normalmente el paquete de oracle
 --    DBMS_LOB
-
 -- Componentes: La columna LOB almacena un localizador a el valor del LOB.
+
+
+--!Compilacion
+-- hay dos metodos de compilacion : 
+-- 1. interpreted compilation (by default), luego de compilar el codigo (forma intermedia, machine-readable code)
+--    es almacenado en la base de datos con un objeto compilado.
+--    Cuando ejecutamos este, el servidor ha interpretado este en orden
+--    para ejecutar el codigo compilado. Asi este tiene un paso extra, el paso de interpretacion.
+-- 2. native compilation son compiladas en codigo nativo, este va hacer almacenado en el tablespace SYSTEM.
+
+
+-- interpreted compilation : - cuando se usa la herramienta de debug - se necesita compilar rapidamente
+-- native compilation : - codigo fuertemente basado en PL/SQL - incrementarel rendimiento en produccion
+
+-- Se puede cambiar el modo de compilacion a nivel de sesion o a nivel de sistema.
+
+--Compilar codigo en nativo
+SELECT name, plsql_code_type, plsql_optimize_level
+FROM user_plsql_object_settings
+WHERE name = 'C_OUTPUT';
+
+ALTER SESSION SET PLSQL_CODE_TYPE = NATIVE;
+
+ALTER PROCEDURE C_OUTPUT COMPILE;
