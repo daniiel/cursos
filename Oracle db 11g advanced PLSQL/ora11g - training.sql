@@ -454,3 +454,123 @@ IS
   END display_card_info;
 END;
 /
+
+SELECT SYS_CONTEXT('USERENV','DB_NAME')
+FROM DUAL;
+
+SELECT SYS_CONTEXT('USERENV','SESSION_USER')
+FROM DUAL;
+
+-- AS SYS
+CREATE OR REPLACE CONTEXT order_ctx USING oe.orders_app_pkg;
+
+-- AS OE
+CREATE OR REPLACE PACKAGE orders_app_pkg
+IS
+  PROCEDURE show_app_context;
+  PROCEDURE set_app_context;
+  FUNCTION the_predicate (p_schema VARCHAR2, p_name VARCHAR2) RETURN VARCHAR2;
+END orders_app_pkg;
+/
+CREATE OR REPLACE PACKAGE BODY orders_app_pkg
+IS
+  c_context CONSTANT VARCHAR2(30) := 'ORDER_CTX';
+  c_attrib  CONSTANT VARCHAR2(30) := 'ACCOUNT_MGR';
+  
+  PROCEDURE show_app_context
+  IS
+  BEGIN
+    dbms_output.put_line('Type: ' || c_attrib || ' - ' || SYS_CONTEXT(c_context,c_attrib));
+  END show_app_context;
+  
+  PROCEDURE set_app_context
+  IS 
+    v_user VARCHAR2(30);
+  BEGIN
+    SELECT user INTO v_user FROM dual;
+    DBMS_SESSION.SET_CONTEXT(c_context, 'ACCOUNT_MGR', v_user);
+  END set_app_context;
+  
+  FUNCTION the_predicate (p_schema VARCHAR2, p_name VARCHAR2)
+  RETURN VARCHAR2
+  IS 
+    v_context_value VARCHAR2(100) := SYS_CONTEXT(c_context, c_attrib);
+    v_restriction VARCHAR2(2000);
+  BEGIN
+    IF v_context_value LIKE 'AM%' THEN 
+      v_restriction := 'ACCOUNT_MGR_ID = SUBSTR(''' || v_context_value || ''', 3, 3)';
+    ELSE
+      v_restriction := NULL;
+    END IF;
+    RETURN v_restriction;
+  END the_predicate;
+END orders_app_pkg;
+/
+
+-- AS SYS
+DROP USER AM145;
+CREATE USER am145 IDENTIFIED BY oracle
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA UNLIMITED ON USERS;
+
+DROP USER AM147;
+CREATE USER am147 IDENTIFIED BY oracle
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA UNLIMITED ON USERS;
+
+DROP USER AM148;
+CREATE USER am148 IDENTIFIED BY oracle
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA UNLIMITED ON USERS;
+
+DROP USER AM149;
+CREATE USER am149 IDENTIFIED BY oracle
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA UNLIMITED ON USERS;
+
+GRANT CREATE SESSION, ALTER SESSION TO am145, am147, am148, am149;
+
+GRANT SELECT, INSERT, UPDATE, DELETE ON oe.customers TO am145, am147, am148, am149;
+
+CREATE PUBLIC SYNONYM CUSTOMERS FOR OE.CUSTOMERS;
+
+-- as OE                    
+GRANT EXECUTE ON OE.ORDERS_APP_PKG TO am145, am147, am148, am149;
+
+-- as AM145
+EXECUTE oe.orders_app_pkg.set_app_context;
+SELECT SYS_CONTEXT('ORDER_CTX','ACCOUNT_MGR') FROM DUAL;
+
+-- as SYS
+CREATE OR REPLACE CONTEXT order_ctx USING oe.orders_app_pkg;
+
+DECLARE
+BEGIN
+  DBMS_RLS.ADD_POLICY (
+    'OE',                             -- schema
+    'CUSTOMERS',                      -- tabla/objeto
+    'OE_ACCESS_POLICY',               -- nombre de la politica
+    'OE',                             -- la funcion esta en el schema oe
+    'ORDERS_APP_PKG.THE_PREDICATE',   -- la funcion es llamada the predicate
+    'SELECT, UPDATE, DELETE',
+    FALSE,
+    TRUE
+    );
+END define_the_policy;
+/
+
+CREATE OR REPLACE TRIGGER set_id_on_logon
+AFTER logon ON DATABASE
+BEGIN
+  oe.orders_app_pkg.set_app_context;
+END;
+/
+
+-- AS OE
+-- INFORMACION SOBRE LAS POLITICAS CREADAS
+SELECT OBJECT_NAME, POLICY_NAME, PF_OWNER, PACKAGE, FUNCTION, SEL ,INS, UPD, DEL
+FROM ALL_POLICIES;
