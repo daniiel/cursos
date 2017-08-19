@@ -1,0 +1,111 @@
+# set the machine load factors
+function ldfactor {
+
+memsize=`sed -n '/MemTotal/ {s/MemTotal:[ ]*\([0-9]*\) kB/\1/p}' /proc/meminfo`
+membase=1
+memsize=`echo "scale=2; $memsize/1035320" | bc`
+memfactor=`echo "scale=2; (($memsize-$membase)/.9)+1" | bc`
+
+bogo=`sed -n '/bogo/{ s/^bogo.* \([0-9]*\)\.[0-9]*$/\1/p}' /proc/cpuinfo`
+
+declare -i numcpu
+declare -i totbogo
+for i in $bogo
+do
+totbogo=$totbogo+$i
+(( numcpu+=1 ))
+done
+
+cpus=$numcpu
+bogobase=3342
+bogofactor=`echo "scale=2; ($totbogo*1.1/$bogobase)"|bc`
+
+#  round(input)*factors
+inval=$1
+inval1=`echo "scale=0; $inval*$bogofactor*$memfactor/1" | bc`
+inval2=`echo "scale=1; $inval*$bogofactor*$memfactor/1" | bc`
+inval3=`echo "scale=0; (10*$inval2)-(10*$inval1)" | bc`
+newval=`echo "if ( $inval3 >= 5) $inval1+1 else $inval1+0" | bc`
+}
+
+function memfactor {
+
+memsize=`sed -n '/MemTotal/ {s/MemTotal:[ ]*\([0-9]*\) kB/\1/p}' /proc/meminfo`
+membase=1
+memsize=`echo "scale=2; $memsize/1035320" | bc`
+memfactor=`echo "scale=2; (($memsize-$membase)*.9)+1" | bc`
+
+#  round(input)*factors
+inval=$1
+inval1=`echo "scale=0; $inval*$memfactor/1" | bc`
+inval2=`echo "scale=1; $inval*$memfactor/1" | bc`
+inval3=`echo "scale=0; (10*$inval2)-(10*$inval1)" | bc`
+newval=`echo "if ( $inval3 >= 5) $inval1+1 else $inval1+0" | bc`
+}
+
+# set the machine CPU factor
+function cpufactor {
+
+bogo=`sed -n '/bogo/{ s/^bogo.* \([0-9]*\)\.[0-9]*$/\1/p}' /proc/cpuinfo`
+
+declare -i numcpu
+numcpu=0
+
+declare -i totbogo
+for i in $bogo
+do
+totbogo=$totbogo+$i
+(( numcpu+=1 ))
+done
+
+cpus=$numcpu
+
+bogobase=3342
+bogofactor=`echo "scale=2; ($totbogo*1.1/$bogobase)"|bc`
+
+#  round(input)*factors
+inval=$1
+inval1=`echo "scale=0; $inval*$bogofactor/1" | bc`
+inval2=`echo "scale=1; $inval*$bogofactor/1" | bc`
+inval3=`echo "scale=0; (10*$inval2)-(10*$inval1)" | bc`
+newval=`echo "if ( $inval3 >= 5) $inval1+1 else $inval1+0" | bc`
+}
+
+# set the machine CPU factor inverse
+function invcpufactor {
+
+bogo=`sed -n '/bogo/{ s/^bogo.* \([0-9]*\)\.[0-9]*$/\1/p}' /proc/cpuinfo`
+
+declare -i totbogo
+for i in $bogo
+do
+totbogo=$totbogo+$i
+done
+
+bogobase=3342
+bogofactor=`echo "scale=2; ($totbogo*1.1/$bogobase)"|bc`
+
+#  round(input)*factors
+inval=$1
+inval1=`echo "scale=0; $inval/$bogofactor" | bc`
+inval2=`echo "scale=1; $inval/$bogofactor" | bc`
+inval3=`echo "scale=0; (10*$inval2)-(10*$inval1)" | bc`
+newval=`echo "if ( $inval3 >= 5) $inval1+1 else $inval1+0" | bc`
+}
+
+function newdir {
+slashdir=`df | awk '$6 ~ /\/$/ {print $1}'`
+}
+
+function cpucount {
+
+bogo=`sed -n '/bogo/{ s/^bogo.* \([0-9]*\)\.[0-9]*$/\1/p}' /proc/cpuinfo`
+
+declare -i totcpu
+totcpu=0
+for i in $bogo
+do
+ totcpu=$totcpu+1
+done
+cpunum=$totcpu
+}

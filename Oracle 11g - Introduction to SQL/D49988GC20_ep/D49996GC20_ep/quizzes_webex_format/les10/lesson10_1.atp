@@ -1,0 +1,8 @@
+<POLL TYPE="anonymous" SHOWTIMER="yes" ALARM="2:0" NOANSWER="yes" SHOWRESPONSE="yes">
+<QUESTION TYPE="mcmany" TITLE="You can use constraints to do the following:">
+<ANSWER ISCORRECT="true">Enforce rules on the data in a table whenever a row is inserted, updated, or deleted.</ANSWER>
+<ANSWER ISCORRECT="true">Prevent the deletion of a table.</ANSWER>
+<ANSWER ISCORRECT="false">Prevent the creation of a table.</ANSWER>
+<ANSWER ISCORRECT="true">Prevent the creation of data in a table.</ANSWER>
+</QUESTION>
+</POLL>

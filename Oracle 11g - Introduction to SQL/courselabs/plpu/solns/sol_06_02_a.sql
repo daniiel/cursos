@@ -1,0 +1,5 @@
+CREATE OR REPLACE PACKAGE compile_pkg IS
+  PROCEDURE make(p_name VARCHAR2);
+END compile_pkg;
+/
+SHOW ERRORS

@@ -1,0 +1,9 @@
+<POLL TYPE="anonymous" SHOWTIMER="yes" ALARM="2:0" NOANSWER="yes" SHOWRESPONSE="yes">
+<QUESTION TYPE="mcmany" TITLE="The dictionary views that are based on the dictionary tables contain information such as:">
+<ANSWER ISCORRECT="false">Definitions of all the schema objects in the database</ANSWER>
+<ANSWER ISCORRECT="false">Default values for the columns</ANSWER>
+<ANSWER ISCORRECT="false">Integrity constraint information</ANSWER>
+<ANSWER ISCORRECT="false">Privileges and roles that each user has been granted</ANSWER>
+<ANSWER ISCORRECT="true">All of the above</ANSWER>
+</QUESTION>
+</POLL>

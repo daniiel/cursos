@@ -1,0 +1,3 @@
+SELECT FROM_TZ(TIMESTAMP 
+       '2000-07-12 08:00:00', 'Australia/North')
+FROM DUAL;

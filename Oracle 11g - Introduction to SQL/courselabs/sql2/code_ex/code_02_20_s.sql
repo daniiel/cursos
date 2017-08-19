@@ -1,0 +1,6 @@
+ALTER TABLE emp2
+ENABLE CONSTRAINT emp_dt_fk;
+
+
+
+

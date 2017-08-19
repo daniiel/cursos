@@ -1,0 +1,1 @@
+SELECT DISTINCT view_name FROM user_views;

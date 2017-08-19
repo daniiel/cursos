@@ -1,0 +1,1 @@
+EXECUTE emp_pkg.add_employee('David', 'Smith','DASMITH', p_deptid => 80)

@@ -1,0 +1,1 @@
+EXECUTE add_job ('ST_MAN', 'Stock Manager')

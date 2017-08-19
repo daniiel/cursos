@@ -1,0 +1,1 @@
+CREATE INDEX dept_name_idx ON dept (name);

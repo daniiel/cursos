@@ -1,0 +1,1 @@
+ALTER SESSION SET TIME_ZONE = 'America/New_York';

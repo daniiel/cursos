@@ -1,0 +1,6 @@
+<POLL TYPE="anonymous" SHOWTIMER="yes" ALARM="2:0" NOANSWER="yes" SHOWRESPONSE="yes">
+<QUESTION TYPE="mcone" TITLE="A FOREIGN KEY constraint enforces the following action: When the data in the parent key is deleted, all the rows in the child table that depend on the deleted parent key values are also deleted.">
+<ANSWER ISCORRECT="false">True</ANSWER>
+<ANSWER ISCORRECT="true">False</ANSWER>
+</QUESTION>
+</POLL>

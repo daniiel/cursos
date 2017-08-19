@@ -1,0 +1,7 @@
+FLASHBACK TABLE emp2 TO BEFORE DROP;
+
+desc emp2
+
+
+
+

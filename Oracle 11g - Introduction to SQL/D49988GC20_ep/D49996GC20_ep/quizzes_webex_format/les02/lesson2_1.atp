@@ -1,0 +1,10 @@
+<POLL TYPE="anonymous" SHOWTIMER="yes" ALARM="2:0" NOANSWER="yes" SHOWRESPONSE="yes">
+<QUESTION TYPE="mcmany" TITLE="Which of the following are valid operators for the WHERE clause? ">
+<ANSWER ISCORRECT="true">>=</ANSWER>
+<ANSWER ISCORRECT="true">IS NULL</ANSWER>
+<ANSWER ISCORRECT="true">!=</ANSWER>
+<ANSWER ISCORRECT="false">IS LIKE</ANSWER>
+<ANSWER ISCORRECT="false">IN BETWEEN</ANSWER>
+<ANSWER ISCORRECT="true"><></ANSWER>
+</QUESTION>
+</POLL>

@@ -1,0 +1,3 @@
+CREATE SEQUENCE title_id_seq
+START WITH 92 
+NOCACHE;

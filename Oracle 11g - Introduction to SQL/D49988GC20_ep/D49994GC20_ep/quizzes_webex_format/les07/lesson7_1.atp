@@ -1,0 +1,7 @@
+<POLL TYPE="anonymous" SHOWTIMER="yes" ALARM="2:0" NOANSWER="yes" SHOWRESPONSE="yes">
+<QUESTION TYPE="mcmany" TITLE="With the use of regular expressions in SQL and PL/SQL, you can:">
+<ANSWER ISCORRECT="true">Avoid intensive string processing of SQL result sets by middle-tier applications</ANSWER>
+<ANSWER ISCORRECT="true">Avoid data validation logic on the client</ANSWER>
+<ANSWER ISCORRECT="true">Enforce constraints on the server</ANSWER>
+</QUESTION>
+</POLL>

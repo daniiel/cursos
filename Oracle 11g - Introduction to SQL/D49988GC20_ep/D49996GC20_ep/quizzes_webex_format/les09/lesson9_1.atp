@@ -1,0 +1,7 @@
+<POLL TYPE="anonymous" SHOWTIMER="yes" ALARM="2:0" NOANSWER="yes" SHOWRESPONSE="yes">
+<QUESTION TYPE="mcone" TITLE="The following statements produce the same results:  (a)  DELETE FROM copy_emp; (b) TRUNCATE TABLE copy_emp;">
+<ANSWER ISCORRECT="false">True</ANSWER>
+<ANSWER ISCORRECT="true">False</ANSWER>
+</QUESTION>
+</POLL>
+  

@@ -1,0 +1,12 @@
+<POLL TYPE="anonymous" SHOWTIMER="yes" ALARM="2:0" NOANSWER="yes" SHOWRESPONSE="yes">
+<QUESTION TYPE="mcmany" TITLE="The SQL:1999 standard join syntax supports the following types of joins. Which of these join types does Oracle join syntax support? ">
+<ANSWER ISCORRECT="true">Equijoins</ANSWER>
+<ANSWER ISCORRECT="true">Nonequijoins</ANSWER>
+<ANSWER ISCORRECT="true">Left OUTER join</ANSWER>
+<ANSWER ISCORRECT="true">Right OUTER join</ANSWER>
+<ANSWER ISCORRECT="false">Full OUTER join</ANSWER>
+<ANSWER ISCORRECT="true">Self joins</ANSWER>
+<ANSWER ISCORRECT="false">Natural joins</ANSWER>
+<ANSWER ISCORRECT="true">Cartesian products</ANSWER>
+</QUESTION>
+</POLL>

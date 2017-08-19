@@ -1,0 +1,3 @@
+WRAP INAME=demo_12_hello.sql
+WRAP INAME=demo_12_hello
+WRAP INAME=demo_12_hello.sql ONAME=demo_12_hello.plb

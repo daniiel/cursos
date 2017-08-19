@@ -1,0 +1,9 @@
+
+User created.
+
+
+Grant succeeded.
+
+Lab_07_01_01 completed. You may now login as:
+dba1/oracle_4U
+

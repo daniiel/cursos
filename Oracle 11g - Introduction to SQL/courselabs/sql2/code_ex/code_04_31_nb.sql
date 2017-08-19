@@ -1,0 +1,1 @@
+describe sales_info

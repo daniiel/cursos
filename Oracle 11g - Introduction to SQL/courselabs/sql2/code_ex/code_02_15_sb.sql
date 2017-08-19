@@ -1,0 +1,3 @@
+SET CONSTRAINTS dept2_id_pk IMMEDIATE;
+
+

@@ -1,0 +1,3 @@
+SET SERVEROUTPUT ON
+
+EXECUTE add_job_hist(106, 'SY_ANAL')

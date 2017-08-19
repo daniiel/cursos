@@ -1,0 +1,2 @@
+ALTER TABLE sample_dates MODIFY date_col 
+TIMESTAMP WITH TIME ZONE;

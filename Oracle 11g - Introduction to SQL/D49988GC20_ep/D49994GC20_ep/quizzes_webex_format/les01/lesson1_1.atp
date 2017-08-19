@@ -1,0 +1,8 @@
+<POLL TYPE="anonymous" SHOWTIMER="yes" ALARM="2:0" NOANSWER="yes" SHOWRESPONSE="yes">
+<QUESTION TYPE="mcmany" TITLE="Which of the following statements are true?">
+<ANSWER ISCORRECT="true">After a user creates an object, the user can pass along any of the available object privileges to other users by using the GRANT statement.</ANSWER>
+<ANSWER ISCORRECT="false">A user can create roles by using the CREATE ROLE statement to pass along a collection of system or object privileges to other users.</ANSWER>
+<ANSWER ISCORRECT="true">Users can change their own passwords.</ANSWER>
+<ANSWER ISCORRECT="true">Users can view the privileges granted to them and those that are granted on their objects.</ANSWER>
+</QUESTION>
+</POLL>

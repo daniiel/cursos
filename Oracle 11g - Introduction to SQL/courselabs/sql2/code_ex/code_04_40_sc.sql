@@ -1,0 +1,11 @@
+SELECT salary FROM employees3
+  VERSIONS BETWEEN SCN MINVALUE AND MAXVALUE
+WHERE  employee_id = 107;
+
+
+
+
+
+
+
+

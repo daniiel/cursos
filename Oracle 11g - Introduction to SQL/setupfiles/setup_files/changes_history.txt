@@ -1,0 +1,7 @@
+Date:       Author: Change description:
+----------- ------- -------------------------------------------------------------------------------------------
+28-Apr-2009 nhg     Files updated for 11gR2 on Linux with 1 setup for the SQL and PL/SQL components and bundles
+02-Jun-2009 nhg     Added ora23 in the create_users script; changed pathing to lowercase in the cre_dir script
+11-Jun-2009 nhg     Added permissions to cre_users and cre_teach
+14-Jul-2009 nhg     Fixed ora23 so that the tables are created for that user.
+10-Aug-2009 nhg     Changed cre_dir script -  removed country_pic and data_files directory objects.

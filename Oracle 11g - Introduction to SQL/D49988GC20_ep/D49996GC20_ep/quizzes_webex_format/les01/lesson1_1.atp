@@ -1,0 +1,8 @@
+<POLL TYPE="anonymous" SHOWTIMER="yes" ALARM="2:0" NOANSWER="yes" SHOWRESPONSE="yes">
+<QUESTION TYPE="mcmany" TITLE="Identify the SELECT statements that execute successfully.">
+<ANSWER ISCORRECT="false"> SELECT first_name, last_name, job_id, salary*12 AS Yearly Sal FROM   employees; </ANSWER>
+<ANSWER ISCORRECT="true"> SELECT first_name, last_name, job_id, salary*12  "yearly sal" FROM   employees; </ANSWER>
+<ANSWER ISCORRECT="true"> SELECT first_name, last_name, job_id, salary AS  "yearly sal" FROM   employees;</ANSWER>
+<ANSWER ISCORRECT="false"> SELECT first_name+last_name AS name, job_Id,  salary*12 yearly sal FROM   employees;</ANSWER>
+</QUESTION>
+</POLL>

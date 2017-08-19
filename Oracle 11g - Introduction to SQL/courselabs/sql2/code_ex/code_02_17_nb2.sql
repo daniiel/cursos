@@ -1,0 +1,1 @@
+INSERT INTO emp_new_sal VALUES(90,5);

@@ -1,0 +1,1 @@
+alter table title add(price NUMBER(6))

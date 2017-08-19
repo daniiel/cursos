@@ -1,0 +1,4 @@
+ALTER TABLE employees2
+      DROP UNUSED COLUMNS;
+
+DESCRIBE employees2

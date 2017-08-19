@@ -1,0 +1,1 @@
+EXECUTE del_job ('IT_WEB')

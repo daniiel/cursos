@@ -1,0 +1,11 @@
+<POLL TYPE="anonymous" SHOWTIMER="yes" ALARM="2:0" NOANSWER="yes" SHOWRESPONSE="yes">
+<QUESTION TYPE="mcmany" TITLE="Which of the following statements are true about single-row functions?">
+<ANSWER ISCORRECT="true">Manipulate data items</ANSWER>
+<ANSWER ISCORRECT="false">Accept arguments and return one value per argument</ANSWER>
+<ANSWER ISCORRECT="true">Act on each row that is returned</ANSWER>
+<ANSWER ISCORRECT="false">Return one result per set of rows</ANSWER>
+<ANSWER ISCORRECT="false">May not modify the data type</ANSWER>
+<ANSWER ISCORRECT="true">Can be nested</ANSWER>
+<ANSWER ISCORRECT="true">Accept arguments that can be a column or an expression</ANSWER>
+</QUESTION>
+</POLL>

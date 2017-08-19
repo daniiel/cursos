@@ -1,0 +1,1 @@
+ALTER PROCEDURE add_job_history COMPILE;

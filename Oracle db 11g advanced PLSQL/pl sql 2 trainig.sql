@@ -20,7 +20,7 @@ connect by prior employee_id = manager_id;
 	END;
 
 --! PROCEDURE
-
+-- --------------------------------------------------------------------------------------
 -- Def: Un PROCEDURE es un subprograma almacenado que sale y hace algo.
 --      Un PL/SQL block nombrado que realiza una sequencia de acciones y opcional
 -- 		retorna un valor o valores.
@@ -37,7 +37,7 @@ END;
 /
 
 --! PARAMETERS MODE
-
+-- --------------------------------------------------------------------------------------
 -- Def: Hay 3 modos de parametros IN, OUT, IN OUT. 'IN' es el modo por defecto y significa que
 --		un valor es pasado a el subprograma. 'OUT' indica que el subprograma esta pasando un valor
 -- 		generado en el subprograma a el entorno de llamada. el 'IN OUT' mode significa que un valor
@@ -45,7 +45,7 @@ END;
 --		entorno de llamada.
 
 --! FUNCTION
-
+-- --------------------------------------------------------------------------------------
 -- Def: Una FUNCTION, es un bloque nombrado que DEBE retornar un valor
 -- 		Llamado/Invocado como parte de una expresion o usado para proporcionar un
 --		valor de parametro
@@ -71,11 +71,11 @@ SQL> dbms_output.put_line(tax(20400));
 
 -- Maneras de ejecutar una funcion
 
-	-- Usando HOST VARIABLE, la variable va a mantener el valor de retorno de la funcion
-	VARIABLE v_credit NUMBER
-	EXECUTE :v_credit := get_credit(101);
+	-- 1. Usando HOST VARIABLE, la variable va a mantener el valor de retorno de la funcion
+	VARIABLE v_credit NUMBER;
+	EXECUTE v_credit := get_credit(101);
 
-	-- Usando una variable local
+	-- 2. Usando una variable local
 	DECLARE 
 		v_credit 	customers.credit_limit%TYPE;
 	BEGIN
@@ -83,10 +83,10 @@ SQL> dbms_output.put_line(tax(20400));
 		...
 	END;
 	
-	-- Como un parametro de otro subprograma
+	-- 3. Como un parametro de otro subprograma
 	EXECUTE dbms_output.put_line(get_credit(101));
 
-	-- Uso en una sentencia SQL (sujeto a restriccion)
+	-- 4. Uso en una sentencia SQL (sujeto a restriccion)
 	SELECT get_credit(customer_id) FROM customers;
 
 -- Restricciones al invocar una FUNCION
@@ -94,38 +94,43 @@ SQL> dbms_output.put_line(tax(20400));
 	-- Funciones definidas por el usuario que son llamadas expresiones SQL deben:
 		-- estar almacenadas en db 
 		-- acepta solo parametros 'IN' con tipos de datos SQL, no tipos especificos de PL/SQL
-		-- returna tipos de datos validos SQL, no PL/SQL.
-	
+		-- retorna tipos de datos validos SQL, no PL/SQL.
 
 
--- FUNCTION VS PROCEDURE : La diferencia entre una FUNCION y un PROCEDIMIENTO es que la funcion debe tener 
+-- FUNCTION VS PROCEDURE
+-- --------------------------------------------------------------------------------------
+--    La diferencia entre una FUNCION y un PROCEDIMIENTO es que la funcion debe tener 
 -- 		un valor de retorno, ademas un procedimiento puede ser invocado directamente usando
---		el nombre (called as statements), mientras que una funcion debe ser parte de una expresion, (invocacion dentro
--- 		de una expresion, consulta, etc..)
+--		el nombre (called as statements), mientras que una funcion debe ser parte de una expresion, 
+-- 		(invocacion dentro de una expresion, consulta, etc..)
 
 
--- BIND variable also known as a HOST variable
--- Def: Las BIND VARIABLES permiten pasar el valor al host, tambien conocidas como variables 
--- 		globales.
+--! BIND variable also known as a HOST variable
+-- --------------------------------------------------------------------------------------
+-- Def: Las BIND VARIABLES tambien conocidas como variables globales.
+--    Hay 2 tipos de variables en Oracle, 
+-- 		permiten pasar el valor al host
 --		Es capaz de mantener el valor por la duracion de su sesion.
+
+
+-- Ej. Creacion de una variable, definicion de un bloque PL/SQL invocando la variable usada
+--    usando el operador ':'. Validar con un 'Select' que la variable fue efectivamente asignada.
 
 VAR b_name varchar2(25);
 
-DECLARE
-  v_name VARCHAR2(25);
 BEGIN
   SELECT cust_last_name INTO :b_name
   FROM  customers WHERE  customer_id = 112; 
-  --dbms_output.put_line(v_name);
 END;
 /
+
 SELECT cust_first_name
 FROM  customers
 WHERE  cust_last_name = :b_name;
 
 
 --! PACKAGES
-
+-- --------------------------------------------------------------------------------------
 -- Def: un 'package' is un objecto PL/SQL, el cual permite agrupar objetos relacionados juntos.
 --		Consiste de 2 partes, una especificacion y un body. NO siempre debe tener un body
 
@@ -201,8 +206,8 @@ show errors
 --			normalmente en el codigo de un precedure, etc.
 
 DECLARE
-  CURSOR empCursor IS SELECT * FROM employees 
-    WHERE department_id = 90;
+  CURSOR empCursor IS 
+    SELECT * FROM employees WHERE department_id = 90;
   rec_emp employees%ROWTYPE;
 BEGIN
   OPEN empCursor;
@@ -224,7 +229,7 @@ END;
 --		cursor_name%NOTFOUND
 --		cursor_name%ROWCOUNT
 
---! Cursor FOR loops
+--! Cursor FOR LOOPS
 
 -- Def: FOR loop, es un shortcut para procesar cursores explicitos, implicitamente hace el proceso de 
 -- 		OPEN, FETCH, EXIT, y CLOSE. El registro es implicitamente declarado.

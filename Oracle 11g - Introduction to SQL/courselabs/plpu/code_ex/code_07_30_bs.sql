@@ -1,0 +1,1 @@
+EXECUTE raise_salary(10);

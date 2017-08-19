@@ -1,0 +1,1 @@
+DESCRIBE user_ind_columns

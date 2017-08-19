@@ -1,0 +1,4 @@
+. oraenv <<EOI
++ASM
+EOI
+

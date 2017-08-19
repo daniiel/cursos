@@ -14,6 +14,9 @@ SELECT cust_first_name
 FROM  customer
 WHERE  cust_last_name = v_name;
 /
+
+-- ---------------------------------
+--  BIND VARIABLES
 -- ---------------------------------
 set serveroutput on
 VAR b_name varchar2(25);
@@ -98,8 +101,8 @@ exec Get_Cust_Pkg.get_customer('Eddie');
 
 -- opcion 1
 DECLARE
-  CURSOR empCursor IS SELECT * FROM employees 
-    WHERE department_id = 90;
+  CURSOR empCursor IS 
+    SELECT * FROM employees WHERE department_id = 90;
   rec_emp employees%ROWTYPE;
 BEGIN
   OPEN empCursor;
@@ -111,20 +114,20 @@ BEGIN
   CLOSE empCursor;
 END;
 
--- opcion 2
+-- opcion 2 (Forma recomendada de recorrer un cursor)
 DECLARE
-  CURSOR empCursor IS SELECT * FROM employees 
-    WHERE department_id = 90;
+  CURSOR empCursor IS 
+    SELECT * FROM employees WHERE department_id = 90;
 BEGIN
-  FOR emprec IN empCursor LOOP
-    dbms_output.put_line(emprec.last_name);
+  FOR emp_rec IN empCursor LOOP
+    dbms_output.put_line(emp_rec.last_name);
   END LOOP;
 END;
 
 -- opcion 3
 BEGIN
-  FOR emprec IN (SELECT * FROM employees WHERE department_id = 90) LOOP
-    dbms_output.put_line(emprec.last_name);
+  FOR emp_rec IN (SELECT * FROM employees WHERE department_id = 90) LOOP
+    dbms_output.put_line(emp_rec.last_name);
   END LOOP;
 END;
 

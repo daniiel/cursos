@@ -1,0 +1,12 @@
+SET SERVEROUTPUT ON
+
+BEGIN 
+  EXECUTE IMMEDIATE '
+    CREATE OR REPLACE PROCEDURE P1 IS
+    BEGIN
+      DBMS_OUTPUT.PUT_LINE (''I am not wrapped'');
+    END P1;
+  ';
+END;
+/
+call p1();

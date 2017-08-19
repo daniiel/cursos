@@ -1,0 +1,6 @@
+ALTER TABLE dept80
+MODIFY(last_name VARCHAR2(30));
+
+
+
+

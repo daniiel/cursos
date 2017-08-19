@@ -1,0 +1,346 @@
+SQL> 
+SQL> drop role orax;
+drop role orax
+          *
+ERROR en línea 1:
+ORA-01919: el rol 'ORAX' no existe 
+
+
+SQL> create role orax;
+
+Rol creado.
+
+SQL> grant alter session to orax;
+
+Concesión terminada correctamente.
+
+SQL> grant create session to orax;
+
+Concesión terminada correctamente.
+
+SQL> grant create table to orax;
+
+Concesión terminada correctamente.
+
+SQL> grant create view to orax;
+
+Concesión terminada correctamente.
+
+SQL> grant create sequence to orax;
+
+Concesión terminada correctamente.
+
+SQL> grant create synonym to orax;
+
+Concesión terminada correctamente.
+
+SQL> grant create procedure to orax;
+
+Concesión terminada correctamente.
+
+SQL> grant create trigger to orax;
+
+Concesión terminada correctamente.
+
+SQL> grant create type to orax;
+
+Concesión terminada correctamente.
+
+SQL> grant query rewrite to orax;
+
+Concesión terminada correctamente.
+
+SQL> grant create any index to orax;
+
+Concesión terminada correctamente.
+
+SQL> grant create role to orax;
+
+Concesión terminada correctamente.
+
+SQL> grant create user to orax;
+
+Concesión terminada correctamente.
+
+SQL> grant create any directory to orax;
+
+Concesión terminada correctamente.
+
+SQL> grant drop public synonym to orax;
+
+Concesión terminada correctamente.
+
+SQL> grant create public synonym to orax;
+
+Concesión terminada correctamente.
+
+SQL> grant create job to orax;
+
+Concesión terminada correctamente.
+
+SQL> grant manage scheduler to orax;
+
+Concesión terminada correctamente.
+
+SQL> 
+SQL> grant execute on sys.dbms_stats to orax;
+
+Concesión terminada correctamente.
+
+SQL> 
+SQL> GRANT DEBUG CONNECT SESSION TO orax;
+
+Concesión terminada correctamente.
+
+SQL> GRANT DEBUG ANY PROCEDURE TO orax;
+
+Concesión terminada correctamente.
+
+SQL> GRANT EXECUTE ANY PROCEDURE TO orax;
+
+Concesión terminada correctamente.
+
+SQL> grant select on v_$parameter to ora61;
+grant select on v_$parameter to ora61
+                                *
+ERROR en línea 1:
+ORA-01917: el usuario o rol 'ORA61' no existe 
+
+
+SQL> grant select on v_$parameter to ora62;
+grant select on v_$parameter to ora62
+                                *
+ERROR en línea 1:
+ORA-01917: el usuario o rol 'ORA62' no existe 
+
+
+SQL> 
+SQL> drop user ora1 cascade;
+drop user ora1 cascade
+          *
+ERROR en línea 1:
+ORA-01918: el usuario 'ORA1' no existe 
+
+
+SQL> create user ora1 identified by ora1;
+
+Usuario creado.
+
+SQL> grant orax to ora1;
+
+Concesión terminada correctamente.
+
+SQL> grant create job to ora1;
+
+Concesión terminada correctamente.
+
+SQL> grant create table to ora1;
+
+Concesión terminada correctamente.
+
+SQL> alter user ora1 default tablespace users temporary tablespace temp
+  2  quota unlimited on users;
+
+Usuario modificado.
+
+SQL> 
+SQL> drop user ora21 cascade;
+drop user ora21 cascade
+          *
+ERROR en línea 1:
+ORA-01918: el usuario 'ORA21' no existe 
+
+
+SQL> create user ora21 identified by ora21;
+
+Usuario creado.
+
+SQL> grant orax to ora21;
+
+Concesión terminada correctamente.
+
+SQL> grant create job to ora21;
+
+Concesión terminada correctamente.
+
+SQL> grant create table to ora21;
+
+Concesión terminada correctamente.
+
+SQL> alter user ora21 default tablespace users temporary tablespace temp
+  2  quota unlimited on users;
+
+Usuario modificado.
+
+SQL> 
+SQL> drop user ora22 cascade;
+drop user ora22 cascade
+          *
+ERROR en línea 1:
+ORA-01918: el usuario 'ORA22' no existe 
+
+
+SQL> create user ora22 identified by ora22;
+
+Usuario creado.
+
+SQL> grant orax to ora22;
+
+Concesión terminada correctamente.
+
+SQL> grant create job to ora22;
+
+Concesión terminada correctamente.
+
+SQL> grant create table to ora22;
+
+Concesión terminada correctamente.
+
+SQL> alter user ora22 default tablespace users temporary tablespace temp
+  2  quota unlimited on users;
+
+Usuario modificado.
+
+SQL> 
+SQL> drop user ora23 cascade;
+drop user ora23 cascade
+          *
+ERROR en línea 1:
+ORA-01918: el usuario 'ORA23' no existe 
+
+
+SQL> create user ora23 identified by ora23;
+
+Usuario creado.
+
+SQL> grant orax to ora23;
+
+Concesión terminada correctamente.
+
+SQL> grant create job to ora23;
+
+Concesión terminada correctamente.
+
+SQL> grant create table to ora23;
+
+Concesión terminada correctamente.
+
+SQL> alter user ora23 default tablespace users temporary tablespace temp
+  2  quota unlimited on users;
+
+Usuario modificado.
+
+SQL> 
+SQL> drop user ora41 cascade;
+drop user ora41 cascade
+          *
+ERROR en línea 1:
+ORA-01918: el usuario 'ORA41' no existe 
+
+
+SQL> create user ora41 identified by ora41;
+
+Usuario creado.
+
+SQL> grant orax to ora41;
+
+Concesión terminada correctamente.
+
+SQL> alter user ora41 default tablespace users temporary tablespace temp
+  2  quota unlimited on users;
+
+Usuario modificado.
+
+SQL> 
+SQL> drop user ora61 cascade;
+drop user ora61 cascade
+          *
+ERROR en línea 1:
+ORA-01918: el usuario 'ORA61' no existe 
+
+
+SQL> create user ora61 identified by ora61;
+
+Usuario creado.
+
+SQL> grant orax to ora61;
+
+Concesión terminada correctamente.
+
+SQL> grant create job to ora61;
+
+Concesión terminada correctamente.
+
+SQL> grant create table to ora61;
+
+Concesión terminada correctamente.
+
+SQL> grant select on v_$parameter to ora61;
+
+Concesión terminada correctamente.
+
+SQL> alter user ora61 default tablespace users temporary tablespace temp
+  2  quota unlimited on users;
+
+Usuario modificado.
+
+SQL> 
+SQL> drop user ora62 cascade;
+drop user ora62 cascade
+          *
+ERROR en línea 1:
+ORA-01918: el usuario 'ORA62' no existe 
+
+
+SQL> create user ora62 identified by ora62;
+
+Usuario creado.
+
+SQL> grant orax to ora62;
+
+Concesión terminada correctamente.
+
+SQL> grant create job to ora62;
+
+Concesión terminada correctamente.
+
+SQL> grant create table to ora62;
+
+Concesión terminada correctamente.
+
+SQL> alter user ora62 default tablespace users temporary tablespace temp
+  2  quota unlimited on users;
+
+Usuario modificado.
+
+SQL> 
+SQL> drop user ora81 cascade;
+drop user ora81 cascade
+          *
+ERROR en línea 1:
+ORA-01918: el usuario 'ORA81' no existe 
+
+
+SQL> create user ora81 identified by ora81;
+
+Usuario creado.
+
+SQL> grant orax to ora81;
+
+Concesión terminada correctamente.
+
+SQL> grant create job to ora81;
+
+Concesión terminada correctamente.
+
+SQL> grant create table to ora81;
+
+Concesión terminada correctamente.
+
+SQL> alter user ora81 default tablespace users temporary tablespace temp
+  2  quota unlimited on users;
+
+Usuario modificado.
+
+SQL> 
+SQL> spool off

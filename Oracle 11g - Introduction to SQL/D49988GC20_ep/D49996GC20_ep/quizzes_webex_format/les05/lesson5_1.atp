@@ -1,0 +1,9 @@
+<POLL TYPE="anonymous" SHOWTIMER="yes" ALARM="2:0" NOANSWER="yes" SHOWRESPONSE="yes">
+<QUESTION TYPE="mcmany" TITLE="Identify the guidelines for group functions and the GROUP BY clause.">
+<ANSWER ISCORRECT="true">You cannot use a column alias in the GROUP BY clause.</ANSWER>
+<ANSWER ISCORRECT="false">The GROUP BY column must be in the SELECT clause.</ANSWER>
+<ANSWER ISCORRECT="true">By using a WHERE clause, you can exclude rows before dividing them into groups.</ANSWER>
+<ANSWER ISCORRECT="false">The GROUP BY clause groups rows and ensures order of the result set.</ANSWER>
+<ANSWER ISCORRECT="false">If you include a group function in a SELECT clause, you cannot select individual results as well.</ANSWER>
+</QUESTION>
+</POLL>

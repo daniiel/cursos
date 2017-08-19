@@ -1,0 +1,1 @@
+SELECT * FROM copy_emp3;

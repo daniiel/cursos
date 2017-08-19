@@ -1,0 +1,5 @@
+ALTER TABLE  dept80
+DROP  UNUSED COLUMNS;
+
+
+

@@ -1,0 +1,1 @@
+INSERT INTO web_orders values (current_date, current_timestamp + 2);

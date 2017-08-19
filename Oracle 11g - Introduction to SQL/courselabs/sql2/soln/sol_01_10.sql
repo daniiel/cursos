@@ -1,0 +1,1 @@
+REVOKE select,update,insert ON COUNTRIES FROM <team2_oraxx>;

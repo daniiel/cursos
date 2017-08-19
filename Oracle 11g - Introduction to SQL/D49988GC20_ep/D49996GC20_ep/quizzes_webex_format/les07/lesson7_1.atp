@@ -1,0 +1,6 @@
+<POLL TYPE="anonymous" SHOWTIMER="yes" ALARM="2:0" NOANSWER="yes" SHOWRESPONSE="yes">
+<QUESTION TYPE="mcone" TITLE="Using a subquery is equivalent to performing two sequential queries and using the result of the first query as the search values in the second query.">
+<ANSWER ISCORRECT="true">True</ANSWER>
+<ANSWER ISCORRECT="false">False</ANSWER>
+</QUESTION>
+</POLL>

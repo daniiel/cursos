@@ -1,0 +1,8 @@
+<POLL TYPE="anonymous" SHOWTIMER="yes" ALARM="2:0" NOANSWER="yes" SHOWRESPONSE="yes">
+<QUESTION TYPE="mcmany" TITLE="Identify the set operator guidelines.">
+<ANSWER ISCORRECT="true">The expressions in the SELECT lists must match in number.</ANSWER>
+<ANSWER ISCORRECT="false">Parentheses may not be used to alter the sequence of execution.</ANSWER>
+<ANSWER ISCORRECT="true">The data type of each column in the second query must match the data type of its corresponding column in the first query.</ANSWER>
+<ANSWER ISCORRECT="false">The ORDER BY clause can be used only once in a compound query, unless a UNION ALL operator is used.</ANSWER>
+</QUESTION>
+</POLL>

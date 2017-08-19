@@ -1,0 +1,8 @@
+<POLL TYPE="anonymous" SHOWTIMER="yes" ALARM="2:0" NOANSWER="yes" SHOWRESPONSE="yes">
+<QUESTION TYPE="mcmany" TITLE="The TIME_ZONE session parameter may be set to:">
+<ANSWER ISCORRECT="false">A relative offset</ANSWER>
+<ANSWER ISCORRECT="true">Database time zone</ANSWER>
+<ANSWER ISCORRECT="true">OS local time zone</ANSWER>
+<ANSWER ISCORRECT="true">A named region</ANSWER>
+</QUESTION>
+</POLL>

@@ -1,0 +1,3 @@
+CREATE TABLE t2 (col_a NUMBER, col_b NUMBER, col_c NUMBER);
+CREATE VIEW v AS SELECT col_a, col_b FROM T2;
+

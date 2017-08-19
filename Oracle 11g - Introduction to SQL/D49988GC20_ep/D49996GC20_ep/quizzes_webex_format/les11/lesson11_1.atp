@@ -1,0 +1,6 @@
+<POLL TYPE="anonymous" SHOWTIMER="yes" ALARM="2:0" NOANSWER="yes" SHOWRESPONSE="yes">
+<QUESTION TYPE="mcone" TITLE="Indexes must be created manually and serve to speed up access to rows in a table.">
+<ANSWER ISCORRECT="false">True</ANSWER>
+<ANSWER ISCORRECT="true">False</ANSWER>
+</QUESTION>
+</POLL>

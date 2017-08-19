@@ -1,0 +1,1 @@
+DESCRIBE user_views

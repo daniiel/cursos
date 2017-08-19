@@ -1,0 +1,3 @@
+ALTER TABLE emp2
+DROP CONSTRAINT emp_mgr_fk;
+

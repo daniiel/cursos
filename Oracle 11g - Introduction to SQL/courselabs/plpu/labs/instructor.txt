@@ -1,0 +1,124 @@
+SALARY REPORT: GENERATED ON
+                             08-MAR-01
+
+DEPARTMENT: 10
+  EMPLOYEE: Whalen earns: 4400
+DEPARTMENT: 20
+  EMPLOYEE: Hartstein earns: 13000
+  EMPLOYEE: Fay earns: 6000
+DEPARTMENT: 30
+  EMPLOYEE: Raphaely earns: 11000
+  EMPLOYEE: Khoo earns: 3100
+  EMPLOYEE: Baida earns: 2900
+  EMPLOYEE: Colmenares earns: 2500
+  EMPLOYEE: Himuro earns: 2600
+  EMPLOYEE: Tobias earns: 2800
+DEPARTMENT: 40
+  EMPLOYEE: Mavris earns: 6500
+DEPARTMENT: 50
+  EMPLOYEE: Weiss earns: 8000
+  EMPLOYEE: Fripp earns: 8200
+  EMPLOYEE: Vollman earns: 6500
+  EMPLOYEE: Olson earns: 2100
+  EMPLOYEE: Marlow earns: 2500
+  EMPLOYEE: Atkinson earns: 2800
+  EMPLOYEE: Bissot earns: 3300
+  EMPLOYEE: Markle earns: 2200
+  EMPLOYEE: Landry earns: 2400
+  EMPLOYEE: Mikkilineni earns: 2700
+  EMPLOYEE: Nayer earns: 3200
+  EMPLOYEE: Mourgos earns: 5800
+  EMPLOYEE: Rajs earns: 3500
+  EMPLOYEE: Patel earns: 2500
+  EMPLOYEE: Seo earns: 2700
+  EMPLOYEE: Stiles earns: 3200
+  EMPLOYEE: Ladwig earns: 3600
+  EMPLOYEE: Philtanker earns: 2200
+  EMPLOYEE: Gee earns: 2400
+  EMPLOYEE: Rogers earns: 2900
+  EMPLOYEE: Mallin earns: 3300
+  EMPLOYEE: Grant earns: 2600
+  EMPLOYEE: OConnell earns: 2600
+  EMPLOYEE: Feeney earns: 3000
+  EMPLOYEE: Walsh earns: 3100
+  EMPLOYEE: Jones earns: 2800
+  EMPLOYEE: McCain earns: 3200
+  EMPLOYEE: Everett earns: 3900
+  EMPLOYEE: Bell earns: 4000
+  EMPLOYEE: Perkins earns: 2500
+  EMPLOYEE: Gates earns: 2900
+  EMPLOYEE: Dilly earns: 3600
+  EMPLOYEE: Chung earns: 3800
+  EMPLOYEE: Cabrio earns: 3000
+  EMPLOYEE: Dellinger earns: 3400
+  EMPLOYEE: Bull earns: 4100
+  EMPLOYEE: Sarchand earns: 4200
+  EMPLOYEE: Geoni earns: 2800
+  EMPLOYEE: Sullivan earns: 2500
+  EMPLOYEE: Fleaur earns: 3100
+  EMPLOYEE: Taylor earns: 3200
+  EMPLOYEE: Vargas earns: 2500
+  EMPLOYEE: Matos earns: 2600
+  EMPLOYEE: Davies earns: 3100
+  EMPLOYEE: Kaufling earns: 7900
+DEPARTMENT: 60
+  EMPLOYEE: Hunold earns: 9000
+  EMPLOYEE: Ernst earns: 6000
+  EMPLOYEE: Pataballa earns: 4800
+  EMPLOYEE: Austin earns: 4800
+  EMPLOYEE: Lorentz earns: 4200
+DEPARTMENT: 70
+  EMPLOYEE: Baer earns: 10000
+DEPARTMENT: 80
+  EMPLOYEE: Russell earns: 14000
+  EMPLOYEE: Errazuriz earns: 12000
+  EMPLOYEE: Zlotkey earns: 10500
+  EMPLOYEE: Bernstein earns: 9500
+  EMPLOYEE: Olsen earns: 8000
+  EMPLOYEE: Tuvault earns: 7000
+  EMPLOYEE: Sully earns: 9500
+  EMPLOYEE: Johnson earns: 6200
+  EMPLOYEE: Livingston earns: 8400
+  EMPLOYEE: Taylor earns: 8600
+  EMPLOYEE: Ande earns: 6400
+  EMPLOYEE: Lee earns: 6800
+  EMPLOYEE: Marvins earns: 7200
+  EMPLOYEE: Greene earns: 9500
+  EMPLOYEE: Vishney earns: 10500
+  EMPLOYEE: Sewall earns: 7000
+  EMPLOYEE: Doran earns: 7500
+  EMPLOYEE: Smith earns: 8000
+  EMPLOYEE: McEwen earns: 9000
+  EMPLOYEE: Hutton earns: 8800
+  EMPLOYEE: Abel earns: 11000
+  EMPLOYEE: Kumar earns: 6100
+  EMPLOYEE: Bates earns: 7300
+  EMPLOYEE: Smith earns: 7400
+  EMPLOYEE: Fox earns: 9600
+  EMPLOYEE: Bloom earns: 10000
+  EMPLOYEE: Ozer earns: 11500
+  EMPLOYEE: Banda earns: 6200
+  EMPLOYEE: Smith earns: 1000
+  EMPLOYEE: Harris earns: 1000
+  EMPLOYEE: King earns: 10000
+  EMPLOYEE: Cambrault earns: 7500
+  EMPLOYEE: Hall earns: 9000
+  EMPLOYEE: Tucker earns: 10000
+  EMPLOYEE: Cambrault earns: 11000
+  EMPLOYEE: Partners earns: 13500
+DEPARTMENT: 90
+  EMPLOYEE: King earns: 24000
+  EMPLOYEE: Kochhar earns: 17000
+  EMPLOYEE: De Haan earns: 17000
+DEPARTMENT: 100
+  EMPLOYEE: Greenberg earns: 12000
+  EMPLOYEE: Faviet earns: 9000
+  EMPLOYEE: Chen earns: 8200
+  EMPLOYEE: Sciarra earns: 7700
+  EMPLOYEE: Urman earns: 7800
+  EMPLOYEE: Popp earns: 6900
+DEPARTMENT: 110
+  EMPLOYEE: Higgins earns: 12000
+  EMPLOYEE: Gietz earns: 8300
+  EMPLOYEE: Grant earns: 7000
+*** END OF REPORT ***

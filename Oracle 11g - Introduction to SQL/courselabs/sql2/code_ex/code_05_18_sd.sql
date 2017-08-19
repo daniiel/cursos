@@ -1,0 +1,1 @@
+INSERT INTO warranty VALUES (678, '200-11');

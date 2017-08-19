@@ -1,0 +1,1 @@
+DROP INDEX upper_dept_name_idx;

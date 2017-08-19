@@ -1,0 +1,3 @@
+ALTER SESSION SET TIME_ZONE = '-7:00';
+
+

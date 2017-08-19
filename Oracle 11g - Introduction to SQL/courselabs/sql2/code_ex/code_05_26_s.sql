@@ -1,0 +1,2 @@
+ SELECT TO_TIMESTAMP ('2007-03-06 11:00:00',
+                     'YYYY-MM-DD HH:MI:SS')     FROM DUAL;

@@ -1,0 +1,7 @@
+CREATE OR REPLACE PROCEDURE add_dept(
+  p_id NUMBER, p_name VARCHAR2) AUTHID CURRENT_USER IS
+BEGIN
+  INSERT INTO departments
+  VALUES (p_id, p_name, NULL, NULL);
+END;
+/
