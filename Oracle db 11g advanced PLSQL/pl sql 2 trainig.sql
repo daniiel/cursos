@@ -114,7 +114,7 @@ SQL> dbms_output.put_line(tax(20400));
 
 
 -- Ej. Creacion de una variable, definicion de un bloque PL/SQL invocando la variable usada
---    usando el operador ':'. Validar con un 'Select' que la variable fue efectivamente asignada.
+--    usando el operador ':' Validar con un 'Select' que la variable fue efectivamente asignada.
 
 VAR b_name varchar2(25);
 
